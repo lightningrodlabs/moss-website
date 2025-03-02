@@ -124,8 +124,14 @@ gap: var(--Spacing-spacing-sm, 8px);
     font-weight: 500;
     line-height: 28px; /* 140% */
     width: fit-content;
-
+    transition: all .25s ease;
+    transform: scale(1);
 }
+.access-button:hover {
+    transition: all .25s ease;
+    transform: scale(1.25);
+}
+
 .footer {
     align-self: baseline;
     margin-left: 20px;
