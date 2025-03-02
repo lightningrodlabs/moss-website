@@ -21,6 +21,7 @@
     flex-shrink: 0;
     background: #C3F3D9;
     width: 100%;
+    line-height: 25px;
 }
 
 .normal-text {
@@ -36,6 +37,7 @@
     font-size: 20px;
     letter-spacing: 0;
     line-height: 35px;
+    text-align: center;
 }
 
 .section {}
@@ -119,10 +121,10 @@
 
 .access-button {
     display: inline-flex;
-padding: 14px 24px;
-justify-content: center;
-align-items: center;
-gap: var(--Spacing-spacing-sm, 8px);
+    padding: 14px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: var(--Spacing-spacing-sm, 8px);
 
     border-radius: 20px;
     border: 4px solid var(--06, #E3FC98);
@@ -134,11 +136,13 @@ gap: var(--Spacing-spacing-sm, 8px);
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 28px; /* 140% */
+    line-height: 28px;
+    /* 140% */
     width: fit-content;
     transition: all .25s ease;
     transform: scale(1);
 }
+
 .access-button:hover {
     transition: all .25s ease;
     transform: scale(1.25);
@@ -150,6 +154,7 @@ gap: var(--Spacing-spacing-sm, 8px);
     position: absolute;
     bottom: 10px;
 }
+
 .footer p {
     color: rgba(0, 0, 0, 0.40);
 
@@ -157,17 +162,18 @@ gap: var(--Spacing-spacing-sm, 8px);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 20px; /* 142.857% */  
+    line-height: 20px;
+    /* 142.857% */
 }
 
 .footer a {
-    
+
     color: #000;
-font-family: "Inter Variable";
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 20px;
+    font-family: "Inter Variable";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
 }
 
 /* Responsive layout for smaller screens */
@@ -175,16 +181,25 @@ line-height: 20px;
     .container {
         height: fit-content;
     }
+
+    .header-bar p {
+        max-width: 60%;
+        line-height:25px;
+        padding:3px;
+    }
+
     .benefits {
         flex-direction: column;
-        align-items: center;    
+        align-items: center;
     }
+
     .description {
         max-width: 80%;
         text-align: center;
         line-height: 25px;
-        
+
     }
+
     .title-1 {
         width: 305px;
         height: 300px;
@@ -193,9 +208,11 @@ line-height: 20px;
         background-repeat: no-repeat;
         background-color: transparent;
     }
+
     .title-2 img {
         width: 490px;
     }
+
     .access-button-2 {
         margin-bottom: 40px;
     }
