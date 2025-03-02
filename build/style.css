@@ -70,6 +70,8 @@
     flex-direction: row;
     gap: 20px;
     margin-top: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .benefit {
@@ -80,6 +82,14 @@
     background: linear-gradient(218deg, #EAFBD5 28.86%, #C9E5C4 100%);
     padding: 20px;
     overflow: hidden;
+    flex-shrink: 0;
+}
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .benefits {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .benefit-title {
