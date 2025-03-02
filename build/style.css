@@ -52,9 +52,11 @@
 }
 
 .hero {
-    height: 650px;
+    height: 555px;
+    width: 1440px;
     background-image: url("images/moss-hero.png");
     background-position-x: center;
+    background-repeat: no-repeat;
     background-color: transparent;
     display: flex;
     flex-direction: column;
@@ -63,6 +65,12 @@
 
 .title-1 {
     margin-top: -30px;
+    width: 900px;
+    height: 200px;
+    background-image: url("images/moss-title-1.svg");
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
 }
 
 .benefits {
@@ -84,13 +92,7 @@
     overflow: hidden;
     flex-shrink: 0;
 }
-/* Responsive layout for smaller screens */
-@media (max-width: 768px) {
-    .benefits {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+
 
 .benefit-title {
     font-family: "Inter Variable-Medium", Helvetica;
@@ -158,8 +160,6 @@ gap: var(--Spacing-spacing-sm, 8px);
     line-height: 20px; /* 142.857% */  
 }
 
-
-
 .footer a {
     
     color: #000;
@@ -168,4 +168,35 @@ font-size: 14px;
 font-style: normal;
 font-weight: 500;
 line-height: 20px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        height: fit-content;
+    }
+    .benefits {
+        flex-direction: column;
+        align-items: center;    
+    }
+    .description {
+        max-width: 80%;
+        text-align: center;
+        line-height: 25px;
+        
+    }
+    .title-1 {
+        width: 305px;
+        height: 300px;
+        background-image: url("images/moss-title-1-narrow.svg");
+        background-position-x: center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+    }
+    .title-2 img {
+        width: 490px;
+    }
+    .access-button-2 {
+        margin-bottom: 40px;
+    }
 }
