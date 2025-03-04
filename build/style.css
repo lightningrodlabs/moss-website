@@ -10,7 +10,7 @@
             rgb(248.88, 254.97, 230.61) 63%,
             rgb(215, 240, 216) 100%);
     position: relative;
-    height: 1897px;
+    height: fit-content;
 }
 
 .header-bar {
@@ -154,6 +154,10 @@
     color: rgba(224, 238, 213, 1);
 }
 
+.access-button-2 {
+    margin-bottom: 200px;
+}
+
 .footer {
     align-self: baseline;
     margin-left: 20px;
@@ -185,7 +189,6 @@
 /* Responsive layout for smaller screens */
 @media (max-width: 768px) {
     .container {
-        height: fit-content;
     }
 
     .header-bar p {
@@ -220,7 +223,5 @@
         width: 490px;
     }
 
-    .access-button-2 {
-        margin-bottom: 40px;
-    }
+
 }
