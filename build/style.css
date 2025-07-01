@@ -12,6 +12,9 @@
     position: relative;
     height: fit-content;
 }
+.download-container {
+    height: 100%;
+}
 
 .header-bar {
     display: flex;
@@ -54,8 +57,8 @@
 }
 
 .hero {
-    height: 650px;
     width: 1440px;
+    height: 650px;
     background-image: url("images/moss-hero.png");
     background-position-x: center;
     background-repeat: no-repeat;
@@ -66,6 +69,24 @@
     align-items: center;
 }
 
+.hero-index {
+
+}
+
+.hero-download {
+    background-position-y: -180px;
+    height: 450px;
+}
+
+.hero-download {
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+}
+.hero-download h2 {
+    margin-top: 40px;
+}
 
 
 .title-1 {
@@ -108,6 +129,8 @@
     /* 116.667% */
 }
 
+
+
 .benefit-description {
     margin-top: 16px;
     width: 295px;
@@ -122,6 +145,63 @@
     margin-top: 31px;
     width: 335px;
     height: 200px;
+}
+
+.benefit-title img {
+    width: 40px;
+    height: 40px;
+    color:black;
+}
+
+.platforms {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.platform {
+    width: 335px;
+    height: 162px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: linear-gradient(218deg, #EAFBD5 28.86%, #C9E5C4 100%);
+    padding: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+
+.platform-title {
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: center;
+    /* 116.667% */
+}
+
+.platform-title img {
+    width: 50px;
+    height: 50px;
+    color:black;
+}
+
+.download-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.download-links a {
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    color: white;
 }
 
 .access-button {
