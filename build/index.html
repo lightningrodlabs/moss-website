@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Moss - Peer-to-peer groupware for collective impact</title>
         <link rel="stylesheet" href="globals.css"/>
         <link rel="stylesheet" href="styleguide.css"/>
         <link rel="stylesheet" href="style.css"/>
@@ -10,49 +12,75 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <a class="header-bar" href="access-form.html">
-                <p class="normal-text">
-                Moss is in alpha... Get early access.</p>
-            </a>
-            <div class="section logo">
-                <img src="images/moss-logo.svg"/>
-            </div>
-            <div class="section description normal-text">Peer-to-peer, adaptable, relational environments for collective impact.</div>
-            <div class="section hero">
-                <div class="title-1"></div>
-                <a href="download.html" style="margin-top:23px" class="access-button">
-                    <p>Get early access</p>
+        <!-- Navigation -->
+        <nav class="site-navigation">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <img src="images/moss-logo.svg" alt="Moss"/>
                 </a>
-            </div>
-            <div class="section title-2">
-                <img src="images/moss-title-2.svg"/>
-            </div>
-            <div class="section benefits">
-                <div class="benefit">
-                    <div class="benefit-title">Get hands-on support</div>
-                    <div class="benefit-description">As an early adopter, you’ll get direct support to compose your space for your particular needs. </div>
-                    <img src="images/moss-early-adopters-custom-help.png"/>
-                </div>
-                <div class="benefit">
-                    <div class="benefit-title">Build your early network</div>
-                    <div class="benefit-description">You’ll get access to a network of group stewards and regenerative developers learning from one another. </div>
-                    <img src="images/moss-early-adopters-community.png"/>
-                </div>
-                <div class="benefit">
-                    <div class="benefit-title">Influence the roadmap</div>
-                    <div class="benefit-description">Shape the tools and features that will make Moss a natural part of how your group fulfils its purpose. </div>
-                    <img src="images/moss-early-adopters-roadmap.png"/>
+                <div class="nav-actions">
+                    <a href="download.html" class="nav-cta">Download Moss</a>
+                    <a href="access-form.html" class="nav-link-secondary">Join Early Stewards cohort</a>
                 </div>
             </div>
-            <div class="section">
-                <a class="access-button access-button-2" href="download.html" style="margin-top:80px">
-                    <p>Download</p>
-                </a>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-new">
+            <div class="hero-container">
+                <!-- Tagline -->
+                <div class="hero-header-centered">
+                    <p class="hero-tagline">Moss is...</p>
+                </div>
+
+                <!-- Value Propositions -->
+                <div class="value-props">
+                    <div class="value-prop">
+                        <p>
+                            <span class="muted">a </span>
+                            <span class="underline">peer-to-peer</span>
+                            <span class="muted"> </span>
+                            <span class="underline">privacy-first</span>
+                            <span class="muted"> groupware for small teams.</span>
+                        </p>
+                    </div>
+                    <div class="value-prop">
+                        <p>
+                            <span class="underline">customisable</span>
+                            <span class="muted"> with a focus on group relationships and your mind space.</span>
+                        </p>
+                    </div>
+                    <div class="value-prop">
+                        <p>
+                            <span class="underline">open source</span>
+                            <span class="muted"> and running on the </span>
+                            <span class="underline">true decentralized tech</span>
+                            <span class="muted">.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="hero-heading">
+                    Give your group a space<br/>
+                    where relationships thrive.
+                </h1>
+
+                <!-- CTA Banner -->
+                <div class="hero-cta-banner">
+                    <a href="access-form.html">Moss is in group-onboarding beta. Claim your invite ↗</a>
+                </div>
+
+                <!-- Dashboard Screenshot -->
+                <div class="hero-screenshot">
+                    <img src="images/screenshots/dashboard-hero.png" alt="Moss Dashboard - A collaborative workspace showing active participants and tools"/>
+                </div>
             </div>
-            <div class="footer">
-                <p>Brought to you by <a href="https://lightningrodlabs.org/">Lightningrod Labs</a> and <a href="https://holochain.org">Holochain</a>
-                </p>
-            </div>
-        </body>
-    </html>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Brought to you by <a href="https://lightningrodlabs.org/">Lightningrod Labs</a> and <a href="https://holochain.org">Holochain</a></p>
+        </footer>
+    </body>
+</html>

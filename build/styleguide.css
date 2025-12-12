@@ -1,4 +1,46 @@
 :root {
+    /* Typography - Heading Font (using Georgia as stand-in for Mossville-v2) */
+    --heading-font-family: Georgia, serif;
+    --heading-h1-size: 66px;
+    --heading-h1-line-height: 0.99;
+    --heading-h1-tracking: -1.98px;
+    --heading-h2-size: 48px;
+    --heading-h2-line-height: 1.2;
+    --heading-h2-tracking: -1px;
+    --heading-h3-size: 32px;
+    --heading-h3-line-height: 1.3;
+    --heading-h3-tracking: -1px;
+
+    /* Typography - Body Font (Inter) */
+    --body-font-family: "Inter", sans-serif;
+    --body-large-size: 20px;
+    --body-large-line-height: 1.3;
+    --body-regular-size: 16px;
+    --body-regular-line-height: 1.375;
+    --body-small-size: 14px;
+    --body-small-line-height: 1.4;
+
+    /* Spacing Scale */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 48px;
+    --spacing-xl: 80px;
+    --spacing-2xl: 120px;
+
+    /* Shadow Tokens */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+
+    /* Nature Theme Colors */
+    --color-forest-dark: #151a11;
+    --color-moss-primary: #e0eed5;
+    --color-leaf-accent: #a8c89f;
+    --color-earth-bg: #f5fcf0;
+    --color-mycelium-light: #e8e6dc;
+
+    /* Existing variables */
     --foreground: rgba(0, 0, 0, 1);
     --body-big-font-family: "Inter";
     --body-big-font-weight: 500;

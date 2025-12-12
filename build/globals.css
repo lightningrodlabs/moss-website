@@ -16,3 +16,6 @@ button:focus-visible {
 a {
   text-decoration: none;
 }
+
+/* Font setup - using Georgia as stand-in for Mossville-v2 */
+/* TODO: Replace with Mossville-v2 when font files are provided */
