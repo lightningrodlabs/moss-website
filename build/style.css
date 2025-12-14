@@ -306,12 +306,15 @@
 
 .nav-logo {
     flex-shrink: 0;
+    display: inline-block;
+    line-height: 0;
 }
 
 .nav-logo img {
     height: 44px;
     width: auto;
     display: block;
+    vertical-align: middle;
 }
 
 .nav-links {
@@ -324,8 +327,10 @@
 
 .nav-actions {
     display: flex;
+    flex-direction: row;
     gap: var(--spacing-sm);
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 .nav-link,
@@ -339,6 +344,8 @@
     border-radius: 16px;
     transition: all 0.2s ease;
     cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .nav-link {
