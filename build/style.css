@@ -298,20 +298,28 @@
 
 .nav-left {
     display: flex;
-    gap: var(--spacing-sm);
+    flex-direction: row;
+    gap: var(--spacing-md);
     align-items: center;
+    flex-wrap: nowrap;
+}
+
+.nav-logo {
+    flex-shrink: 0;
 }
 
 .nav-logo img {
     height: 44px;
     width: auto;
+    display: block;
 }
 
 .nav-links {
     display: flex;
+    flex-direction: row;
     gap: var(--spacing-xs);
     align-items: center;
-    margin-left: var(--spacing-md);
+    flex-wrap: nowrap;
 }
 
 .nav-actions {
