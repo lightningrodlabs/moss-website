@@ -296,9 +296,22 @@
     width: 100%;
 }
 
+.nav-left {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
 .nav-logo img {
     height: 44px;
     width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: center;
+    margin-left: var(--spacing-md);
 }
 
 .nav-actions {
