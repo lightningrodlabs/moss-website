@@ -1164,16 +1164,6 @@
     margin: 0 auto;
 }
 
-.tool-library-heading {
-    font-family: var(--heading-font-family);
-    font-size: var(--heading-h2-size, 48px);
-    line-height: var(--heading-h2-line-height, 1.2);
-    letter-spacing: var(--heading-h2-tracking, -1px);
-    text-align: center;
-    color: rgba(0, 0, 0, 1);
-    margin: 0 0 var(--spacing-md, 24px);
-}
-
 .tool-library-intro {
     font-family: var(--body-font-family);
     font-size: var(--body-large-size, 20px);
@@ -1181,7 +1171,35 @@
     text-align: center;
     color: rgba(0, 0, 0, 1);
     max-width: 578px;
-    margin: 0 auto var(--spacing-xl, 80px);
+    margin: 0 auto var(--spacing-sm, 16px);
+}
+
+.tool-library-tagline {
+    font-family: var(--body-font-family);
+    font-size: var(--body-large-size, 20px);
+    line-height: var(--body-large-line-height, 1.3);
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    margin: 0 auto var(--spacing-lg, 48px);
+}
+
+.tool-library-heading {
+    font-family: var(--heading-font-family);
+    font-size: var(--heading-h2-size, 48px);
+    line-height: var(--heading-h2-line-height, 1.2);
+    letter-spacing: var(--heading-h2-tracking, -1px);
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    margin: 0 0 var(--spacing-sm, 16px);
+}
+
+.tool-library-subtitle {
+    font-family: var(--body-font-family);
+    font-size: var(--body-regular-size, 16px);
+    line-height: var(--body-regular-line-height, 1.375);
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0 auto var(--spacing-lg, 48px);
 }
 
 .tool-library-screenshot-wrapper {
@@ -1198,13 +1216,12 @@
     box-shadow: var(--shadow-md);
 }
 
-.tool-library-subtitle {
+.tool-library-footer {
     font-family: var(--body-font-family);
-    font-size: var(--body-regular-size, 16px);
-    line-height: var(--body-regular-line-height, 1.375);
+    font-size: var(--body-large-size, 20px);
+    line-height: var(--body-large-line-height, 1.3);
     text-align: center;
     color: rgba(0, 0, 0, 1);
-    max-width: 514px;
     margin: 0 auto var(--spacing-xl, 80px);
 }
 
@@ -1306,7 +1323,9 @@
     }
 
     .tool-library-intro,
-    .tool-library-subtitle {
+    .tool-library-tagline,
+    .tool-library-subtitle,
+    .tool-library-footer {
         font-size: 16px;
         margin-bottom: var(--spacing-md, 24px);
     }
