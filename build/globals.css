@@ -17,5 +17,11 @@ a {
   text-decoration: none;
 }
 
-/* Font setup - using Georgia as stand-in for Mossville-v2 */
-/* TODO: Replace with Mossville-v2 when font files are provided */
+/* Mossville-v2 Font */
+@font-face {
+  font-family: 'Mossville-v2';
+  src: url('fonts/Mossville-v2-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

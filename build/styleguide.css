@@ -1,6 +1,6 @@
 :root {
-    /* Typography - Heading Font (using Georgia as stand-in for Mossville-v2) */
-    --heading-font-family: Georgia, serif;
+    /* Typography - Heading Font (Mossville-v2) */
+    --heading-font-family: 'Mossville-v2', Georgia, serif;
     --heading-h1-size: 66px;
     --heading-h1-line-height: 0.99;
     --heading-h1-tracking: -1.98px;
