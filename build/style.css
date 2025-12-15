@@ -349,22 +349,25 @@
 
 .nav-link {
     color: var(--color-forest-dark);
-    background: rgba(223, 235, 225, 0.7);
+    background: transparent;
     opacity: 0.7;
 }
 
 .nav-link:hover {
     opacity: 1;
-    background: rgba(223, 235, 225, 1);
+    background: transparent;
 }
 
 .nav-link-secondary {
-    background: var(--color-moss-primary);
+    background: white;
     color: var(--color-forest-dark);
+    border: 1px solid var(--color-moss-primary, #e0eed5);
+    box-shadow: 0px 0px 20px 0px #edffb9;
 }
 
 .nav-link-secondary:hover {
-    background: var(--color-leaf-accent);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 0px 25px 0px #edffb9;
 }
 
 .nav-cta {
@@ -378,7 +381,7 @@
 
 /* Hero Section */
 .hero-new {
-    background: var(--color-earth-bg);
+    background: linear-gradient(to bottom, #f5fcf0 56.731%, #d7d9d8 100%);
     padding: 100px var(--spacing-md) var(--spacing-xl);
     position: relative;
 }
@@ -449,24 +452,12 @@
     z-index: 1;
 }
 
-/* Moss mark logo in rounded square button */
-.hero-icon-logo {
+/* Moss app icon image */
+.hero-icon-image {
     position: relative;
     z-index: 2;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #eaf8df;
-    border-radius: 17px;
-    border: 1px solid white;
-    overflow: hidden;
-}
-
-.hero-icon-logo img {
-    width: 68px;
-    height: 68px;
+    width: 160px;
+    height: 160px;
     display: block;
 }
 
@@ -506,10 +497,9 @@
     line-height: var(--body-large-line-height);
 }
 
-.value-prop .underline {
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
-    text-underline-position: from-font;
+.value-prop strong {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
 }
 
 .value-prop .muted {
@@ -517,12 +507,13 @@
 }
 
 .hero-cta-banner {
-    background: var(--color-moss-primary);
-    border: 2px solid white;
+    background: white;
+    border: 1px solid var(--color-moss-primary, #e0eed5);
     border-radius: 16px;
     padding: 16px 20px;
-    margin: var(--spacing-lg) 0;
+    margin: var(--spacing-lg) auto;
     text-align: center;
+    max-width: 676px;
 }
 
 .hero-cta-banner a {
@@ -536,6 +527,8 @@
 .hero-screenshot {
     margin: var(--spacing-xl) 0;
     text-align: center;
+    position: relative;
+    z-index: 3;
 }
 
 .hero-screenshot img {
@@ -806,4 +799,42 @@
     .platform-card {
         padding: var(--spacing-md, 24px) var(--spacing-sm, 16px);
     }
+}
+
+/* Hero Background Images */
+.hero-bg-pattern {
+    position: absolute;
+    top: 790px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 113%;
+    max-width: 1600px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-bg-pattern img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-bg-blur {
+    position: absolute;
+    top: 718px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1025px;
+    height: 1025px;
+    border-radius: 1025px;
+    background: radial-gradient(50% 50% at 50% 50%, var(--06, #E3FC98) 0%, rgba(224, 238, 213, 0.00) 100%);
+    filter: blur(107px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Ensure hero container has proper z-index */
+.hero-container {
+    position: relative;
+    z-index: 2;
 }
