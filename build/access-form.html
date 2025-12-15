@@ -2,25 +2,62 @@
 <html>
     <head>
         <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Join Early Stewards Cohort - Moss</title>
         <link rel="stylesheet" href="globals.css"/>
         <link rel="stylesheet" href="styleguide.css"/>
         <link rel="stylesheet" href="style.css"/>
+        <link rel="icon" href="favicon.svg" type="image/svg+xml">
+        <link rel="manifest" href="manifest.webmanifest">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="container" style="height:100%">
-            <div class="header-bar">
-                <p class="normal-text"></p>
-
+        <!-- Navigation -->
+        <nav class="site-navigation">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <a href="index.html" class="nav-logo">
+                        <img src="images/moss-logo.svg" alt="Moss"/>
+                    </a>
+                    <div class="nav-links">
+                        <a href="index.html#what-is-moss" class="nav-link">What is Moss?</a>
+                        <a href="index.html#faq" class="nav-link">FAQ</a>
+                        <a href="https://docs.moss.social" class="nav-link">Dev docs ↗</a>
+                    </div>
+                </div>
+                <div class="nav-actions">
+                    <a href="access-form.html" class="nav-link-secondary">Join Early Stewards cohort</a>
+                    <a href="download.html" class="nav-cta">Download Moss</a>
+                </div>
             </div>
-            <div style="width:90%;marign:auto;">
+        </nav>
+
+        <!-- Header Section -->
+        <section class="form-header">
+            <div class="form-header-container">
+                <h1 class="form-heading">Join the Early Stewards Cohort</h1>
+                <p class="form-description">
+                    Be among the first to use Moss, connect with community weavers,
+                    and help shape the future of peer-to-peer collaboration.
+                </p>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="form-section">
+            <div class="form-container">
                 <iframe
                     height="600"
                     src="https://app.formbricks.com/s/cm7us4tuf0003l8036o33reng?embed=true"
                     frameborder="0"
-                    style="margin-top:100px;width:100%;"
+                    class="form-iframe"
                 ></iframe>
             </div>
+        </section>
 
-        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Brought to you by <a href="https://lightningrodlabs.org/">Lightningrod Labs</a> and <a href="https://holochain.org">Holochain</a></p>
+        </footer>
     </body>
 </html>

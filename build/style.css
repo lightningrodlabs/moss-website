@@ -589,3 +589,73 @@
 
 
 }
+/* ========================================
+   Access Form Page Styles
+   ======================================== */
+
+.form-header {
+    background: var(--moss-bg-light, #f5fcf0);
+    padding: var(--spacing-2xl, 80px) var(--spacing-lg, 40px) var(--spacing-xl, 60px);
+    text-align: center;
+}
+
+.form-header-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-heading {
+    font-family: var(--heading-font-family, "Inter", sans-serif);
+    font-size: var(--heading-large-size, 48px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-primary, #000);
+    margin: 0 0 var(--spacing-md, 24px) 0;
+}
+
+.form-description {
+    font-family: var(--body-font-family, "Inter", sans-serif);
+    font-size: var(--body-large-size, 20px);
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-section {
+    background: white;
+    padding: var(--spacing-xl, 60px) var(--spacing-lg, 40px);
+    min-height: 70vh;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-iframe {
+    width: 100%;
+    border: none;
+    min-height: 600px;
+}
+
+/* Mobile responsive for form page */
+@media (max-width: 768px) {
+    .form-header {
+        padding: var(--spacing-xl, 60px) var(--spacing-md, 24px) var(--spacing-lg, 40px);
+    }
+    
+    .form-heading {
+        font-size: 32px;
+    }
+    
+    .form-description {
+        font-size: 18px;
+    }
+    
+    .form-section {
+        padding: var(--spacing-lg, 40px) var(--spacing-md, 24px);
+    }
+}
