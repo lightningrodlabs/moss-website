@@ -1165,7 +1165,7 @@
 }
 
 .tool-library-intro {
-    font-family: var(--body-font-family);
+    font-family: var(--heading-font-family);
     font-size: var(--body-large-size, 20px);
     line-height: var(--body-large-line-height, 1.3);
     text-align: center;
