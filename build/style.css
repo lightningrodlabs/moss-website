@@ -1148,3 +1148,177 @@
         padding: 10px 16px;
     }
 }
+
+
+/* ============================
+   Tool Library Section (Phase 3)
+   ============================ */
+
+.tool-library-section {
+    background: linear-gradient(180deg, #F5FCF0 0%, #F4F5F2 100%);
+    padding: var(--spacing-2xl, 120px) var(--spacing-md, 24px);
+}
+
+.tool-library-container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.tool-library-heading {
+    font-family: var(--heading-font-family);
+    font-size: var(--heading-h2-size, 48px);
+    line-height: var(--heading-h2-line-height, 1.2);
+    letter-spacing: var(--heading-h2-tracking, -1px);
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    margin: 0 0 var(--spacing-md, 24px);
+}
+
+.tool-library-intro {
+    font-family: var(--body-font-family);
+    font-size: var(--body-large-size, 20px);
+    line-height: var(--body-large-line-height, 1.3);
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    max-width: 578px;
+    margin: 0 auto var(--spacing-xl, 80px);
+}
+
+.tool-library-screenshot-wrapper {
+    max-width: 1025px;
+    margin: 0 auto var(--spacing-lg, 48px);
+}
+
+.tool-library-screenshot {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid white;
+    display: block;
+    box-shadow: var(--shadow-md);
+}
+
+.tool-library-subtitle {
+    font-family: var(--body-font-family);
+    font-size: var(--body-regular-size, 16px);
+    line-height: var(--body-regular-line-height, 1.375);
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    max-width: 514px;
+    margin: 0 auto var(--spacing-xl, 80px);
+}
+
+.tool-teasers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md, 24px);
+    max-width: 1360px;
+    margin: 0 auto var(--spacing-lg, 48px);
+}
+
+.tool-teaser {
+    background: white;
+    border-radius: 20px;
+    padding: var(--spacing-md, 24px);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    min-height: 506px;
+}
+
+.teaser-image-wrapper {
+    width: 100%;
+    height: 303px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-sm, 16px);
+    background: #f0f0f0;
+}
+
+.teaser-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gray placeholder for missing teaser images */
+.teaser-image-wrapper.placeholder {
+    background: #D9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-icon {
+    font-size: 64px;
+    opacity: 0.3;
+}
+
+.tool-teaser h4 {
+    font-family: var(--body-font-family);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 1);
+    margin: 0 0 var(--spacing-xs, 8px);
+}
+
+.tool-teaser p {
+    font-family: var(--body-font-family);
+    font-size: var(--body-regular-size, 16px);
+    line-height: var(--body-regular-line-height, 1.375);
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    flex: 1;
+}
+
+.tool-library-count {
+    font-family: var(--body-font-family);
+    font-size: var(--body-large-size, 20px);
+    line-height: var(--body-large-line-height, 1.3);
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    margin: 0;
+}
+
+/* Responsive adjustments for Phase 3 */
+@media (max-width: 1024px) {
+    .tool-teasers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tool-library-section {
+        padding: var(--spacing-lg, 48px) var(--spacing-md, 24px);
+    }
+
+    .tool-library-heading {
+        font-size: 32px;
+        margin-bottom: var(--spacing-md, 24px);
+    }
+
+    .tool-teasers-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm, 16px);
+    }
+
+    .tool-teaser {
+        min-height: auto;
+    }
+
+    .teaser-image-wrapper {
+        height: 200px;
+    }
+
+    .tool-library-intro,
+    .tool-library-subtitle {
+        font-size: 16px;
+        margin-bottom: var(--spacing-md, 24px);
+    }
+
+    .tool-library-count {
+        font-size: 16px;
+    }
+}
