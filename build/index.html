@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="nav-actions">
-                    <a href="access-form.html" class="nav-link-secondary">Join Early Stewards cohort</a>
+                    <a href="access-form.html" class="nav-link-secondary">Join Early Movers Collective</a>
                     <a href="download.html" class="nav-cta">Download Moss</a>
                 </div>
             </div>
@@ -221,7 +221,54 @@
             <p>Brought to you by <a href="https://lightningrodlabs.org/">Lightningrod Labs</a> and <a href="https://holochain.org">Holochain</a></p>
         </footer>
 
+        <!-- Download Overlay -->
+        <div id="download-overlay" class="download-overlay">
+            <div class="download-overlay-backdrop"></div>
+            <div class="download-modal">
+                <button class="download-modal-close" aria-label="Close">&times;</button>
+
+                <h2 class="download-modal-title">Get Moss</h2>
+
+                <!-- Mac Section -->
+                <div class="platform-section">
+                    <div class="platform-header">
+                        <img src="images/platform_logos/apple_logo.svg" alt="" class="platform-icon"/>
+                        <span>Moss for Mac</span>
+                    </div>
+                    <div class="platform-buttons">
+                        <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.14.4/org.lightningrodlabs.moss-0.14-0.14.4-arm64.dmg" class="download-button">M-series</a>
+                        <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.14.4/org.lightningrodlabs.moss-0.14-0.14.4-x64.dmg" class="download-button">Intel</a>
+                    </div>
+                </div>
+
+                <!-- Windows Section -->
+                <div class="platform-section">
+                    <div class="platform-header">
+                        <img src="images/platform_logos/windows_logo.svg" alt="" class="platform-icon"/>
+                        <span>Moss for Windows</span>
+                    </div>
+                    <div class="platform-buttons">
+                        <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.14.4/org.lightningrodlabs.moss-0.14-0.14.4.msi" class="download-button download-button-wide">Windows</a>
+                    </div>
+                </div>
+
+                <!-- Linux Section -->
+                <div class="platform-section">
+                    <div class="platform-header">
+                        <img src="images/platform_logos/linux_logo.svg" alt="" class="platform-icon"/>
+                        <span>Moss for Linux</span>
+                    </div>
+                    <div class="platform-buttons">
+                        <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.14.4/org.lightningrodlabs.moss-0.14-0.14.4.AppImage" class="download-button">AppImage</a>
+                        <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.14.4/org.lightningrodlabs.moss-0.14-0.14.4.deb" class="download-button">.deb</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Scroll Reveal Animation -->
         <script src="scroll-reveal.js"></script>
+        <!-- Download Overlay Script -->
+        <script src="download-overlay.js"></script>
     </body>
 </html>

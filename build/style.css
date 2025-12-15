@@ -724,7 +724,6 @@
 .platform-icon {
     width: 80px;
     height: 80px;
-    margin: 0 auto var(--spacing-md, 24px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1327,4 +1326,171 @@
         margin-bottom: var(--spacing-md, 24px);
     }
 
+}
+
+/* ============================
+   Download Overlay
+   ============================ */
+
+.download-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: none;
+    pointer-events: none;
+}
+
+.download-overlay.active {
+    display: block;
+    pointer-events: auto;
+}
+
+.download-overlay-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.2s ease-out;
+}
+
+.download-modal {
+    position: absolute;
+    top: 80px; /* Below navigation */
+    right: 24px; /* Aligned to right edge */
+    background: white;
+    border: 1px solid rgba(133, 180, 110, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    width: 336px;
+    box-shadow: 0 20px 60px rgba(133, 180, 110, 0.15);
+    animation: slideDown 0.3s ease-out;
+    z-index: 1;
+}
+
+.download-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.download-modal-close:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.download-modal-title {
+    font-family: 'Mossville-v2', var(--heading-font-family);
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    text-align: center;
+    margin: 0 0 24px;
+    color: black;
+    font-weight: 400;
+}
+
+.platform-section {
+    background: #e0eed5;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 12px;
+}
+
+.platform-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.platform-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    height: 20px; /* Match icon height */
+}
+
+.platform-header span {
+    font-family: 'Inter Variable', 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: black;
+}
+
+.platform-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    flex-shrink: 0;
+}
+
+.platform-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.download-button {
+    background: #151a11;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 12px 16px;
+    font-family: 'Inter Variable', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 136px;
+}
+
+.download-button:hover {
+    background: #2a3422;
+}
+
+.download-button-wide {
+    width: 100%;
+    max-width: 280px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
