@@ -1166,21 +1166,12 @@
 
 .tool-library-intro {
     font-family: var(--heading-font-family);
-    font-size: var(--body-large-size, 20px);
+    font-size: 32px;
     line-height: var(--body-large-line-height, 1.3);
     text-align: center;
     color: rgba(0, 0, 0, 1);
     max-width: 578px;
     margin: 0 auto var(--spacing-sm, 16px);
-}
-
-.tool-library-tagline {
-    font-family: var(--body-font-family);
-    font-size: var(--body-large-size, 20px);
-    line-height: var(--body-large-line-height, 1.3);
-    text-align: center;
-    color: rgba(0, 0, 0, 1);
-    margin: 0 auto var(--spacing-lg, 48px);
 }
 
 .tool-library-heading {
@@ -1191,6 +1182,7 @@
     text-align: center;
     color: rgba(0, 0, 0, 1);
     margin: 0 0 var(--spacing-sm, 16px);
+    margin-top: 60px;
 }
 
 .tool-library-subtitle {
@@ -1283,15 +1275,6 @@
     background: #D9D9D9;
 }
 
-.tool-library-count {
-    font-family: var(--body-font-family);
-    font-size: var(--body-large-size, 20px);
-    line-height: var(--body-large-line-height, 1.3);
-    text-align: center;
-    color: rgba(0, 0, 0, 1);
-    margin: 0;
-}
-
 /* Responsive adjustments for Phase 3 */
 @media (max-width: 1024px) {
     .tool-teasers-grid {
@@ -1323,14 +1306,10 @@
     }
 
     .tool-library-intro,
-    .tool-library-tagline,
     .tool-library-subtitle,
     .tool-library-footer {
         font-size: 16px;
         margin-bottom: var(--spacing-md, 24px);
     }
 
-    .tool-library-count {
-        font-size: 16px;
-    }
 }
