@@ -848,6 +848,7 @@
     padding: var(--spacing-xl, 80px) var(--spacing-md, 24px);
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
 }
 
 .motivation-container {
@@ -856,6 +857,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 .motivation-text {
@@ -868,6 +870,14 @@
 
 .motivation-text p {
     margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.motivation-text p.revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .motivation-text .emphasis {
@@ -877,6 +887,17 @@
 .motivation-text .muted {
     color: rgba(0, 0, 0, 0.2);
 }
+
+/* Adjust transition delays for staggered effect */
+.motivation-text p:nth-child(1) { transition-delay: 0s; }
+.motivation-text p:nth-child(2) { transition-delay: 0.1s; }
+.motivation-text p:nth-child(3) { transition-delay: 0.2s; }
+.motivation-text p:nth-child(4) { transition-delay: 0.3s; }
+.motivation-text p:nth-child(5) { transition-delay: 0.4s; }
+.motivation-text p:nth-child(6) { transition-delay: 0.5s; }
+.motivation-text p:nth-child(7) { transition-delay: 0.6s; }
+.motivation-text p:nth-child(8) { transition-delay: 0.7s; }
+.motivation-text p:nth-child(9) { transition-delay: 0.8s; }
 
 /* ============================
    Welcome Section (Phase 2)
@@ -1064,6 +1085,11 @@
 @media (max-width: 768px) {
     .motivation-section {
         padding: var(--spacing-lg, 48px) var(--spacing-md, 24px);
+        min-height: auto;
+    }
+
+    .motivation-container {
+        min-height: auto;
     }
 
     .motivation-text {
