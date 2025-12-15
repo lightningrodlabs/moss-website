@@ -838,3 +838,230 @@
     position: relative;
     z-index: 2;
 }
+
+/* ============================
+   Motivation Section (Phase 2)
+   ============================ */
+
+.motivation-section {
+    background: linear-gradient(180deg, #CCE3DB 0%, #C3F3D9 100%);
+    padding: var(--spacing-xl, 80px) var(--spacing-md, 24px);
+    position: relative;
+    overflow: hidden;
+}
+
+.motivation-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.motivation-text {
+    max-width: 512px;
+    font-family: var(--heading-font-family);
+    font-size: 28px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.motivation-text p {
+    margin: 0;
+}
+
+.motivation-text .emphasis {
+    color: rgba(0, 0, 0, 1);
+}
+
+.motivation-text .muted {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+/* ============================
+   Welcome Section (Phase 2)
+   ============================ */
+
+.welcome-section {
+    background: linear-gradient(180deg, #C3F3D9 0%, #E0EED5 100%);
+    padding: var(--spacing-2xl, 120px) var(--spacing-md, 24px) var(--spacing-xl, 80px);
+    position: relative;
+}
+
+.welcome-container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.welcome-heading {
+    font-family: var(--heading-font-family);
+    font-size: 28px;
+    line-height: 1.2;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    margin: 0 0 var(--spacing-lg, 48px);
+}
+
+.welcome-screenshot-wrapper {
+    position: relative;
+    max-width: 1189px;
+    margin: 0 auto;
+}
+
+.welcome-screenshot {
+    width: 100%;
+    max-width: 1018px;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid white;
+    display: block;
+    margin: 0 auto;
+    box-shadow: var(--shadow-md);
+}
+
+/* Early Movers Card Overlay */
+.early-movers-card {
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    width: 512px;
+    height: 147px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    z-index: 10;
+}
+
+.card-background-image {
+    width: 220px;
+    height: 123px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 12px;
+    flex-shrink: 0;
+}
+
+.card-background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 12px 12px 12px 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-content h3 {
+    font-family: var(--body-font-family);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 1);
+    margin: 0 0 8px;
+}
+
+.card-content p {
+    font-family: var(--body-font-family);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0 0 12px;
+    flex: 1;
+}
+
+.card-cta {
+    background: var(--color-forest-dark);
+    color: white;
+    font-family: var(--body-font-family);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    display: inline-block;
+    width: fit-content;
+    align-self: flex-start;
+}
+
+.card-cta:hover {
+    background: rgba(21, 26, 17, 0.9);
+}
+
+/* Responsive adjustments for Phase 2 */
+@media (max-width: 1024px) {
+    .early-movers-card {
+        width: 400px;
+        height: auto;
+        min-height: 140px;
+    }
+
+    .card-background-image {
+        width: 160px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .motivation-section {
+        padding: var(--spacing-lg, 48px) var(--spacing-md, 24px);
+    }
+
+    .motivation-text {
+        font-size: 22px;
+    }
+
+    .welcome-section {
+        padding: var(--spacing-lg, 48px) var(--spacing-md, 24px);
+    }
+
+    .welcome-heading {
+        font-size: 24px;
+        margin-bottom: var(--spacing-md, 24px);
+    }
+
+    .welcome-screenshot {
+        border-radius: 12px;
+    }
+
+    .early-movers-card {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-top: var(--spacing-md, 24px);
+        flex-direction: column;
+    }
+
+    .card-background-image {
+        width: 100%;
+        height: 200px;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .card-content {
+        padding: var(--spacing-sm, 16px);
+    }
+
+    .card-content h3 {
+        font-size: 18px;
+    }
+
+    .card-content p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .card-cta {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
