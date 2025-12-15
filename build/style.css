@@ -244,15 +244,14 @@
 }
 
 .footer {
-    align-self: baseline;
-    margin-left: 20px;
-    position: absolute;
-    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
 }
 
 .footer p {
     color: rgba(0, 0, 0, 0.40);
-
     font-family: "Inter";
     font-size: 14px;
     font-style: normal;
@@ -395,17 +394,79 @@
 }
 
 .hero-icon {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
     margin: 0 auto;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.hero-icon img {
+/* Mycelium background pattern - large decorative background */
+.hero-icon-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 240px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-icon-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Shadow/blur effect */
+.hero-icon-shadow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 106px;
+    border-radius: 12px;
+    background: conic-gradient(
+        from 90deg,
+        rgba(207, 227, 149, 1) 0%,
+        rgba(168, 190, 130, 1) 9.65%,
+        rgba(129, 152, 110, 1) 19.30%,
+        rgba(89, 115, 91, 1) 28.96%,
+        rgba(50, 77, 71, 1) 38.61%,
+        rgba(89, 115, 91, 1) 53.96%,
+        rgba(129, 152, 110, 1) 69.30%,
+        rgba(168, 190, 130, 1) 84.65%,
+        rgba(207, 227, 149, 1) 100%
+    );
+    filter: blur(11.5px);
+    mix-blend-mode: multiply;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+/* Moss mark logo in rounded square button */
+.hero-icon-logo {
+    position: relative;
+    z-index: 2;
     width: 100px;
     height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaf8df;
+    border-radius: 17px;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+.hero-icon-logo img {
+    width: 68px;
+    height: 68px;
     display: block;
 }
 
