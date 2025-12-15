@@ -886,11 +886,30 @@
     background: linear-gradient(180deg, #C3F3D9 0%, #E0EED5 100%);
     padding: var(--spacing-2xl, 120px) var(--spacing-md, 24px) var(--spacing-xl, 80px);
     position: relative;
+    overflow: hidden;
+}
+
+.welcome-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/backgrounds/Moss-landing-bg-story.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .welcome-container {
     max-width: 1440px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .welcome-heading {
@@ -900,12 +919,15 @@
     text-align: center;
     color: rgba(0, 0, 0, 1);
     margin: 0 0 var(--spacing-lg, 48px);
+    position: relative;
+    z-index: 1;
 }
 
 .welcome-screenshot-wrapper {
     position: relative;
     max-width: 1189px;
     margin: 0 auto;
+    z-index: 1;
 }
 
 .welcome-screenshot {
@@ -934,19 +956,44 @@
     z-index: 10;
 }
 
-.card-background-image {
+.card-video-thumbnail {
     width: 220px;
     height: 123px;
     border-radius: 16px;
     overflow: hidden;
     margin: 12px;
     flex-shrink: 0;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-.card-background-image img {
+.card-video-thumbnail:hover {
+    transform: scale(1.02);
+}
+
+.card-video-thumbnail img:first-child {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+}
+
+.play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.2s ease;
+}
+
+.card-video-thumbnail:hover .play-button-overlay {
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .card-content {
@@ -1003,9 +1050,14 @@
         min-height: 140px;
     }
 
-    .card-background-image {
+    .card-video-thumbnail {
         width: 160px;
         height: 100px;
+    }
+
+    .play-button-overlay {
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -1040,11 +1092,16 @@
         flex-direction: column;
     }
 
-    .card-background-image {
+    .card-video-thumbnail {
         width: 100%;
         height: 200px;
         margin: 0;
         border-radius: 0;
+    }
+
+    .play-button-overlay {
+        width: 64px;
+        height: 64px;
     }
 
     .card-content {
