@@ -845,7 +845,7 @@
 
 .motivation-section {
     background: linear-gradient(180deg, #d7d9d8 0%, #E0EED5 100%);
-    padding: 170px var(--spacing-md, 24px) var(--spacing-xl, 80px);
+    padding: 170px var(--spacing-md, 24px) 0px;
     position: relative;
     overflow: hidden;
     min-height: 100vh;
@@ -872,20 +872,35 @@
     margin: 0;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    color: rgba(0, 0, 0, 0.2); /* Start gray */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, color 0.8s ease-out;
 }
 
 .motivation-text p.revealed {
     opacity: 1;
     transform: translateY(0);
+    color: rgba(0, 0, 0, 1); /* End at full black */
 }
 
-.motivation-text .emphasis {
-    color: rgba(0, 0, 0, 1);
+.motivation-text p .emphasis,
+.motivation-text p .muted {
+    transition: color 0.8s ease-out;
 }
 
-.motivation-text .muted {
-    color: rgba(0, 0, 0, 0.2);
+.motivation-text p:not(.revealed) .emphasis {
+    color: rgba(0, 0, 0, 0.2); /* Start gray */
+}
+
+.motivation-text p.revealed .emphasis {
+    color: rgba(0, 0, 0, 1); /* End at full black */
+}
+
+.motivation-text p:not(.revealed) .muted {
+    color: rgba(0, 0, 0, 0.2); /* Start gray */
+}
+
+.motivation-text p.revealed .muted {
+    color: rgba(0, 0, 0, 1); /* End at full black */
 }
 
 /* Adjust transition delays for staggered effect */
@@ -905,7 +920,7 @@
 
 .welcome-section {
     background: linear-gradient(180deg, #C3F3D9 0%, #E0EED5 100%);
-    padding: var(--spacing-2xl, 120px) var(--spacing-md, 24px) var(--spacing-xl, 80px);
+    padding: 85px var(--spacing-md, 24px) var(--spacing-xl, 80px);
     position: relative;
     overflow: hidden;
 }
