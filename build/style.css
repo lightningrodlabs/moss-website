@@ -1645,6 +1645,9 @@
     max-width: 1440px;
     margin: 0 auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 240px);
 }
 
 .early-movers-heading {
@@ -1803,8 +1806,7 @@
 .bottom-graphic {
     position: relative;
     width: 600px;
-    margin: 0 auto;
-    padding-bottom: 80px;
+    margin: auto auto 0;
 }
 
 .bottom-graphic img {
@@ -1816,7 +1818,7 @@
 /* Footer Text Overlay - Pill Style */
 .footer-text-overlay {
     position: absolute;
-    bottom: 100px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     background: #d8dad9;
