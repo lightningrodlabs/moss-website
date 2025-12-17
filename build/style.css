@@ -1494,3 +1494,120 @@
         transform: translateY(0);
     }
 }
+
+/* ============================
+   Video Overlay
+   ============================ */
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.video-overlay.active {
+    display: flex;
+    pointer-events: auto;
+}
+
+.video-overlay-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.video-container {
+    position: fixed;
+    /* Start at card position */
+    left: var(--start-x, 50%);
+    top: var(--start-y, 50%);
+    width: var(--start-width, 400px);
+    height: var(--start-height, 300px);
+    background: white;
+    border-radius: 20px;
+    overflow: visible; /* Allow close button to extend beyond edges */
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center center;
+}
+
+.video-container.expanded {
+    /* Expand to full window with borders */
+    left: 40px !important;
+    top: 40px !important;
+    width: calc(100vw - 80px) !important;
+    height: calc(100vh - 80px) !important;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: black;
+    border-radius: 12px;
+}
+
+.video-close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid white;
+    font-size: 32px;
+    line-height: 1;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s ease, opacity 0.3s ease;
+    z-index: 10;
+    opacity: 0;
+}
+
+.video-container.expanded .video-close {
+    opacity: 1;
+}
+
+.video-close:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.video-container.expanded #video-iframe {
+    opacity: 1;
+    border-radius: 12px;
+}
+
+/* Responsive video overlay */
+@media (max-width: 768px) {
+    .video-container.expanded {
+        left: 16px !important;
+        top: 16px !important;
+        width: calc(100vw - 32px) !important; /* 16px border on mobile */
+        height: calc(100vh - 32px) !important;
+    }
+}

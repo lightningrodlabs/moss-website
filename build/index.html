@@ -129,13 +129,13 @@
 
                     <!-- Early Movers Card Overlay -->
                     <div class="early-movers-card">
-                        <a href="#video" class="card-video-thumbnail">
+                        <a href="#" id="video-trigger" class="card-video-thumbnail">
                             <img src="images/screenshots/Moss-Zippy-still-frame.jpg" alt="Moss demo video"/>
                             <img src="images/icons/play-button.svg" alt="Play" class="play-button-overlay"/>
                         </a>
                         <div class="card-content">
                             <h3>Moss's philosophy</h3>
-                            <p>Be the very first to use Moss, meet likeminded community weavers and influence roadmap.</p>
+                            <p>Go deep on the vision and philosophy behind Moss, and Holochain, the technology underlying it.</p>
                         </div>
                     </div>
                 </div>
@@ -266,9 +266,25 @@
             </div>
         </div>
 
+        <!-- Video Overlay -->
+        <div id="video-overlay" class="video-overlay">
+            <div class="video-overlay-backdrop"></div>
+            <div class="video-container">
+                <button class="video-close" aria-label="Close">&times;</button>
+                <iframe id="video-iframe"
+                        src=""
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
         <!-- Scroll Reveal Animation -->
         <script src="scroll-reveal.js"></script>
         <!-- Download Overlay Script -->
         <script src="download-overlay.js"></script>
+        <!-- Video Overlay Script -->
+        <script src="video-overlay.js"></script>
     </body>
 </html>
