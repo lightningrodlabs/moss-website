@@ -507,6 +507,7 @@
 }
 
 .hero-cta-banner {
+    position: relative;
     background: white;
     border: 1px solid var(--color-moss-primary, #e0eed5);
     border-radius: 16px;
@@ -516,12 +517,29 @@
     max-width: 676px;
 }
 
+.hero-ellipse-gradient {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1025px;
+    height: 502px;
+    background-image: url('images/backgrounds/ellipse-gradient.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+}
+
 .hero-cta-banner a {
     font-family: var(--body-font-family);
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
     color: black;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-screenshot {
@@ -1609,5 +1627,271 @@
         top: 16px !important;
         width: calc(100vw - 32px) !important; /* 16px border on mobile */
         height: calc(100vh - 32px) !important;
+    }
+}
+
+/* ============================
+   Early Movers Collective Section
+   ============================ */
+
+.early-movers-section {
+    background: linear-gradient(180deg, #f5fcf0 56.731%, #d7d9d8 100%);
+    padding: var(--spacing-2xl, 120px) var(--spacing-md, 24px) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.early-movers-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.early-movers-heading {
+    font-family: 'Mossville-v2', var(--heading-font-family);
+    font-size: 66px;
+    font-weight: 400;
+    line-height: 0.99;
+    letter-spacing: -1.98px;
+    text-align: center;
+    color: black;
+    margin: 0 auto 48px;
+    max-width: 812px;
+}
+
+.early-movers-subheading {
+    font-family: 'Inter Variable', 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0 auto 80px;
+    max-width: 542px;
+}
+
+/* Feature Boxes Grid */
+.feature-boxes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    margin-bottom: 120px;
+}
+
+.feature-box {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-box-heading {
+    font-family: 'Mossville-v2', var(--heading-font-family);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: black;
+    margin: 0 0 12px;
+}
+
+.feature-box-text {
+    font-family: 'Inter Variable', 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: black;
+    margin: 0 0 20px;
+}
+
+.feature-box-image {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: auto;
+}
+
+.feature-box-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Apply Section with Gradient Ellipse */
+.apply-section {
+    position: relative;
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+.ellipse-gradient {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1025px;
+    height: 502px;
+    background-image: url('images/backgrounds/ellipse-gradient.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.apply-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #151a11;
+    color: white;
+    font-family: 'Inter Variable', 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    text-decoration: none;
+    padding: 16px 20px;
+    border-radius: 16px;
+    min-width: 266px;
+    transition: background 0.2s ease;
+    z-index: 1;
+}
+
+.apply-button:hover {
+    background: #2a3422;
+}
+
+/* Say Hello Section */
+.say-hello-heading {
+    font-family: 'Mossville-v2', var(--heading-font-family);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    text-align: center;
+    color: black;
+    margin: 0 auto 48px;
+    max-width: 540px;
+}
+
+/* Get Moss Button */
+.get-moss-button {
+    display: block;
+    margin: 0 auto 80px;
+    background: #151a11;
+    color: white;
+    font-family: 'Inter Variable', 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 16px;
+    min-width: 266px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.get-moss-button:hover {
+    background: #2a3422;
+}
+
+/* Bottom Graphic */
+.bottom-graphic {
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+.bottom-graphic img {
+    width: 100%;
+    height: 316px;
+    display: block;
+}
+
+/* Footer Text Overlay - Pill Style */
+.footer-text-overlay {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d8dad9;
+    border: 1px solid white;
+    border-radius: 16px;
+    padding: 10px 20px;
+    width: 374px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-text-overlay p {
+    font-family: 'Inter Variable', 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: black;
+    margin: 0;
+}
+
+.footer-muted {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.footer-text-overlay a {
+    color: black;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer-text-overlay a:hover {
+    opacity: 0.7;
+}
+
+/* Responsive Early Movers Section */
+@media (max-width: 768px) {
+    .early-movers-heading {
+        font-size: 42px;
+        letter-spacing: -1.26px;
+    }
+
+    .early-movers-subheading {
+        font-size: 18px;
+    }
+
+    .feature-boxes-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 60px;
+    }
+
+    .feature-box-heading {
+        font-size: 28px;
+    }
+
+    .say-hello-heading {
+        font-size: 28px;
+    }
+
+    .bottom-graphic {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .footer-text-overlay {
+        width: 90%;
+        max-width: 320px;
+        bottom: 40px;
+        padding: 8px 16px;
+    }
+
+    .footer-text-overlay p {
+        font-size: 12px;
     }
 }

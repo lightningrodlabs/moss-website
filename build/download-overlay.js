@@ -4,13 +4,27 @@
     const overlay = document.getElementById('download-overlay');
     const backdrop = overlay.querySelector('.download-overlay-backdrop');
     const closeButton = overlay.querySelector('.download-modal-close');
+    const modal = overlay.querySelector('.download-modal');
 
     // Find all "Download Moss" buttons/links
-    const downloadTriggers = document.querySelectorAll('.nav-cta, a[href="download.html"]');
+    const topNavTriggers = document.querySelectorAll('.nav-cta, a[href="download.html"]');
+    const bottomGetMossButton = document.getElementById('get-moss-bottom');
 
-    // Open overlay
-    function openOverlay(e) {
+    // Open overlay with positioning based on trigger
+    function openOverlay(e, fromBottom = false) {
         e.preventDefault();
+
+        // Adjust modal position based on trigger source
+        if (fromBottom) {
+            // Position higher and right-aligned when triggered from bottom
+            modal.style.top = '200px';
+            modal.style.right = '24px';
+        } else {
+            // Default top navigation position
+            modal.style.top = '80px';
+            modal.style.right = '24px';
+        }
+
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent scrolling
     }
@@ -21,10 +35,15 @@
         document.body.style.overflow = ''; // Restore scrolling
     }
 
-    // Add click handlers to download triggers
-    downloadTriggers.forEach(trigger => {
-        trigger.addEventListener('click', openOverlay);
+    // Add click handlers to top navigation triggers
+    topNavTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => openOverlay(e, false));
     });
+
+    // Add click handler to bottom "Get Moss" button
+    if (bottomGetMossButton) {
+        bottomGetMossButton.addEventListener('click', (e) => openOverlay(e, true));
+    }
 
     // Close on backdrop click
     backdrop.addEventListener('click', closeOverlay);
