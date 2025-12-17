@@ -366,7 +366,7 @@
 }
 
 .nav-link-secondary:hover {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(133, 180, 110, 0.2);
     box-shadow: 0px 0px 25px 0px #edffb9;
 }
 
@@ -376,7 +376,7 @@
 }
 
 .nav-cta:hover {
-    background: rgba(21, 26, 17, 0.9);
+    background: linear-gradient(180deg, #3a5228 0%, #2d4424 100%);
 }
 
 /* Hero Section */
@@ -515,6 +515,11 @@
     margin: var(--spacing-lg) auto;
     text-align: center;
     max-width: 676px;
+    transition: background 0.2s ease;
+}
+
+.hero-cta-banner:hover {
+    background: rgba(133, 180, 110, 0.2);
 }
 
 .hero-ellipse-gradient {
@@ -534,7 +539,7 @@
 
 .hero-cta-banner a {
     font-family: var(--body-font-family);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 20px;
     color: black;
@@ -782,7 +787,7 @@
 }
 
 .download-button:hover {
-    background: var(--color-forest-dark, #1f2617);
+    background: linear-gradient(180deg, #3a5228 0%, #2d4424 100%);
     transform: scale(1.02);
 }
 
@@ -1092,7 +1097,7 @@
 }
 
 .card-cta:hover {
-    background: rgba(21, 26, 17, 0.9);
+    background: linear-gradient(180deg, #3a5228 0%, #2d4424 100%);
 }
 
 /* Responsive adjustments for Phase 2 */
@@ -1485,7 +1490,7 @@
 }
 
 .download-button:hover {
-    background: #2a3422;
+    background: linear-gradient(180deg, #3a5228 0%, #2d4424 100%);
 }
 
 .download-button-wide {
@@ -1763,7 +1768,7 @@
 }
 
 .apply-button:hover {
-    background: #2a3422;
+    background: linear-gradient(180deg, #3a5228 0%, #2d4424 100%);
 }
 
 /* Say Hello Section */
@@ -1799,7 +1804,7 @@
 }
 
 .get-moss-button:hover {
-    background: #2a3422;
+    background: linear-gradient(180deg, #3a5228 0%, #2d4424 100%);
 }
 
 /* Bottom Graphic */
