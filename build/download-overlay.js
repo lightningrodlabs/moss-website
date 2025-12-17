@@ -16,12 +16,14 @@
 
         // Adjust modal position based on trigger source
         if (fromBottom) {
-            // Position higher and right-aligned when triggered from bottom
-            modal.style.top = '200px';
+            // Stick to bottom and right-aligned when triggered from bottom
+            modal.style.top = 'auto';
+            modal.style.bottom = '24px';
             modal.style.right = '24px';
         } else {
             // Default top navigation position
             modal.style.top = '80px';
+            modal.style.bottom = 'auto';
             modal.style.right = '24px';
         }
 
