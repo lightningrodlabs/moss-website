@@ -309,10 +309,15 @@
     line-height: 0;
 }
 
-.nav-logo img {
+.nav-logo-desktop {
     height: 44px;
     width: auto;
     display: block;
+    vertical-align: middle;
+}
+
+.nav-logo-mobile {
+    display: none;
     vertical-align: middle;
 }
 
@@ -386,11 +391,8 @@
     position: relative;
 }
 
-/* Hide mobile-only elements on desktop */
-.nav-logo-mobile {
-    display: none;
-}
 
+/* Hide mobile-only elements on desktop */
 .nav-mobile-menu {
     display: none;
 }
