@@ -637,9 +637,26 @@
 
     /* Constrain and reposition background pattern on mobile */
     .hero-bg-pattern {
-        width: 100%;
-        max-width: 100%;
-        top: 350px; /* Adjust position to be under screenshot on mobile */
+        width: 100% !important;
+        max-width: 500px !important; /* Limit width on mobile */
+        top: 420px !important; /* Position to align with screenshot on mobile */
+        transform: translateX(-50%) !important;
+        height: auto !important; /* Allow height to scale naturally */
+    }
+
+    .hero-bg-pattern img {
+        width: 100% !important;
+        height: auto !important; /* Maintain aspect ratio */
+        max-height: 500px !important; /* Constrain height proportionally */
+        object-fit: contain !important; /* Prevent stretching */
+    }
+
+    /* Adjust blur effect position for mobile */
+    .hero-bg-blur {
+        top: 410px !important;
+        width: 512px !important; /* Scale down blur to match smaller layout */
+        height: 512px !important;
+        border-radius: 512px !important;
     }
 
     /* Ensure hero container uses flexbox on mobile for proper ordering and centering */
