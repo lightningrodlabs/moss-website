@@ -9,6 +9,7 @@
     // Find all "Download Moss" buttons/links
     const topNavTriggers = document.querySelectorAll('.nav-cta, a[href="download.html"]');
     const bottomGetMossButton = document.getElementById('get-moss-bottom');
+    const mobileDownloadButton = document.getElementById('send-download-link-mobile');
 
     // Open overlay with positioning based on trigger
     function openOverlay(e, fromBottom = false) {
@@ -45,6 +46,11 @@
     // Add click handler to bottom "Get Moss" button
     if (bottomGetMossButton) {
         bottomGetMossButton.addEventListener('click', (e) => openOverlay(e, true));
+    }
+
+    // Add click handler to mobile "Send Download link" button
+    if (mobileDownloadButton) {
+        mobileDownloadButton.addEventListener('click', (e) => openOverlay(e, false));
     }
 
     // Close on backdrop click

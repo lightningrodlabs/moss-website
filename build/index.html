@@ -17,7 +17,7 @@
             <div class="nav-container">
                 <div class="nav-left">
                     <a href="index.html" class="nav-logo">
-                        <img src="images/moss-logo.svg" alt="Moss"/>
+                        <img src="images/moss-logo.svg" alt="Moss" class="nav-logo-img"/>
                     </a>
                     <div class="nav-links">
                         <a href="https://dev.theweave.social/" class="nav-link">Dev docs ↗</a>
@@ -26,6 +26,14 @@
                 <div class="nav-actions">
                     <a href="https://app.formbricks.com/s/cmg8ct5x906hzxe01h503txyf" class="nav-link-secondary">Join Early Movers Collective</a>
                     <a href="download.html" class="nav-cta">Download Moss</a>
+                    <!-- Mobile-only menu button -->
+                    <button class="nav-mobile-menu" aria-label="Menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="6" r="1.5" fill="currentColor"/>
+                            <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                            <circle cx="12" cy="18" r="1.5" fill="currentColor"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -91,9 +99,52 @@
                     <a href="https://app.formbricks.com/s/cmg8ct5x906hzxe01h503txyf">Moss is in group-onboarding beta. Claim your invite ↗</a>
                 </div>
 
+                <!-- Mobile-only CTA section (appears before screenshot on mobile) -->
+                <div class="mobile-cta-section">
+                    <p class="mobile-cta-heading">Move to Moss.</p>
+                    <button id="send-download-link-mobile" class="mobile-download-button">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="send-icon">
+                            <path d="M18.3327 1.66675L9.16602 10.8334" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18.3327 1.66675L12.4993 18.3334L9.16602 10.8334L1.66602 7.50008L18.3327 1.66675Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Send download link
+                    </button>
+                    <p class="mobile-cta-subtitle">Desktop app is available on MacOS, Linux and Windows.</p>
+                </div>
+
                 <!-- Dashboard Screenshot -->
                 <div class="hero-screenshot">
                     <img src="images/screenshots/Moss-home-placeholder.jpg" alt="Moss Dashboard - A collaborative workspace showing active participants and tools"/>
+                </div>
+
+                <!-- Mobile-only "Moss is" tagline and value props -->
+                <div class="mobile-value-section">
+                    <p class="mobile-hero-tagline">Moss is...</p>
+                    <div class="mobile-value-props">
+                        <div class="mobile-value-prop">
+                            <p>
+                                <span class="muted">a </span>
+                                <strong>peer-to-peer</strong>
+                                <span class="muted"> </span>
+                                <strong>privacy-first</strong>
+                                <span class="muted"> groupware for small teams.</span>
+                            </p>
+                        </div>
+                        <div class="mobile-value-prop">
+                            <p>
+                                <strong>customisable</strong>
+                                <span class="muted"> with a focus on group relationships and your mind space.</span>
+                            </p>
+                        </div>
+                        <div class="mobile-value-prop">
+                            <p>
+                                <strong>open source</strong>
+                                <span class="muted"> and running on the </span>
+                                <strong>true decentralized tech</strong>
+                                <span class="muted">.</span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

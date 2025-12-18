@@ -386,6 +386,19 @@
     position: relative;
 }
 
+/* Hide mobile-only elements on desktop */
+.nav-mobile-menu {
+    display: none;
+}
+
+.mobile-cta-section {
+    display: none;
+}
+
+.mobile-value-section {
+    display: none;
+}
+
 .hero-container {
     max-width: 1280px;
     margin: 0 auto;
@@ -603,6 +616,255 @@
         width: 490px;
     }
 
+    /* ========================================
+       MOBILE HERO AND NAVIGATION FIXES
+       ======================================== */
+
+    /* Fix overflow issues - prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+
+    .hero-new {
+        overflow: hidden;
+    }
+
+    /* Constrain and reposition background pattern on mobile */
+    .hero-bg-pattern {
+        width: 100%;
+        max-width: 100%;
+        top: 350px; /* Adjust position to be under screenshot on mobile */
+    }
+
+    /* Ensure hero container uses flexbox on mobile for proper ordering and centering */
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Hide hero icon on mobile */
+    .hero-header-centered {
+        display: none;
+    }
+
+    /* Adjust hero heading for mobile */
+    .hero-heading {
+        font-size: 42px;
+        line-height: 1.1;
+        letter-spacing: -1.26px;
+        margin-bottom: var(--spacing-md, 24px);
+        order: -3;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Hide tagline on mobile */
+    .hero-tagline {
+        display: none;
+    }
+
+    /* Hide value props above screenshot on mobile - will show below */
+    .value-props {
+        display: none;
+    }
+
+    /* Hide CTA banner on mobile */
+    .hero-cta-banner {
+        display: none;
+    }
+
+    /* Mobile CTA section order */
+    .mobile-cta-section {
+        order: -2;
+        width: 100%;
+    }
+
+    /* Screenshot comes after CTA on mobile - centered */
+    .hero-screenshot {
+        margin: 0 auto var(--spacing-md, 24px);
+        order: -1;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-screenshot img {
+        width: 100%;
+        max-width: 343px;
+        height: auto;
+    }
+
+
+    /* Value section comes last */
+    .mobile-value-section {
+        order: 1;
+        width: 100%;
+    }
+
+    /* Navigation adjustments for mobile */
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 var(--spacing-sm, 16px);
+    }
+
+    .nav-left {
+        flex: 0;
+    }
+
+    /* Swap logo to M icon on mobile */
+    .nav-logo-img {
+        content: url('images/icons/Moss-mark-square.svg');
+        width: 32px;
+        height: 32px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-xs, 8px);
+    }
+
+    /* Hide "Download Moss" button on mobile */
+    .nav-cta {
+        display: none;
+    }
+
+    /* Keep Join Early Movers Collective visible on mobile - no style overrides */
+    .nav-link-secondary {
+        display: inline-block;
+    }
+
+    /* Mobile menu button */
+    .nav-mobile-menu {
+        display: flex;
+        background: transparent;
+        border: none;
+        color: var(--color-forest-dark);
+        padding: 8px;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
+
+    .nav-mobile-menu:hover {
+        opacity: 1;
+    }
+
+    /* Mobile CTA section styling */
+    .mobile-cta-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: var(--spacing-md, 24px);
+        margin-bottom: var(--spacing-lg, 48px);
+        padding: 0 var(--spacing-sm, 16px);
+    }
+
+    .mobile-cta-heading {
+        font-family: var(--heading-font-family);
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: -1px;
+        color: black;
+        text-align: center;
+        margin: 0 0 var(--spacing-md, 24px);
+    }
+
+    .mobile-download-button {
+        background: var(--color-forest-dark);
+        color: white;
+        font-family: var(--body-font-family);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        padding: 12px 16px;
+        border-radius: 16px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        max-width: 343px;
+    }
+
+    .mobile-download-button:hover {
+        background: linear-gradient(180deg, #3a5228 0%, #2d4424 100%);
+    }
+
+    .mobile-download-button .send-icon {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
+
+    .mobile-cta-subtitle {
+        font-family: var(--body-font-family);
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        color: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        margin: var(--spacing-xs, 8px) 0 0;
+        max-width: 343px;
+    }
+
+    /* Mobile-only value section */
+    .mobile-value-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: var(--spacing-lg, 48px);
+        padding: 0 var(--spacing-sm, 16px);
+    }
+
+    .mobile-hero-tagline {
+        font-family: var(--body-font-family);
+        font-size: 16px;
+        line-height: 1.3;
+        color: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        margin: 0 0 var(--spacing-sm, 16px);
+    }
+
+    .mobile-value-props {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm, 16px);
+        width: 100%;
+        max-width: 343px;
+    }
+
+    .mobile-value-prop {
+        text-align: left;
+    }
+
+    .mobile-value-prop p {
+        font-family: var(--body-font-family);
+        font-size: 16px;
+        line-height: 22px;
+        margin: 0;
+    }
+
+    .mobile-value-prop strong {
+        font-weight: 500;
+        color: rgba(0, 0, 0, 1);
+    }
+
+    .mobile-value-prop .muted {
+        color: rgba(0, 0, 0, 0.6);
+    }
 
 }
 /* ========================================
