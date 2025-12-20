@@ -10,6 +10,105 @@
         <link rel="icon" href="favicon.svg" type="image/svg+xml">
         <link rel="manifest" href="manifest.webmanifest">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <style>
+            html {
+                background: linear-gradient(180deg,
+                    rgb(236.53, 242.35, 238.85) 10.15%,
+                    rgb(224, 238, 213) 27.5%,
+                    rgb(248.88, 254.97, 230.61) 63%,
+                    rgb(215, 240, 216) 100%) !important;
+                min-height: 100%;
+            }
+
+            body {
+                background: transparent !important;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .bottom-graphic img {
+                display: block;
+                margin: 0;
+            }
+
+            .download-page-container {
+                flex: 1;
+                max-width: 600px;
+                margin: auto;
+                padding: 0 24px;
+                padding-top: 120px;
+            }
+
+            .download-page-title {
+                font-family: 'Mossville-v2', var(--heading-font-family);
+                font-size: 48px;
+                font-weight: 400;
+                line-height: 1.1;
+                letter-spacing: -1.5px;
+                text-align: center;
+                margin: 0 0 48px;
+            }
+
+            .platform-section {
+                margin-bottom: 32px;
+                padding: 24px;
+                background: white;
+                border: 2px solid var(--collection-1-moss-main-green, #e0eed5);
+                border-radius: 20px;
+            }
+
+            .platform-header {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 16px;
+                font-family: var(--body-font-family);
+                font-size: 18px;
+                font-weight: 600;
+                color: black;
+            }
+
+            .platform-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            .platform-buttons {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            .download-button {
+                flex: 1;
+                min-width: 120px;
+                padding: 12px 24px;
+                background: var(--color-forest-dark, #151a11);
+                color: white;
+                border-radius: 8px;
+                font-family: var(--body-font-family);
+                font-size: 16px;
+                font-weight: 500;
+                text-decoration: none;
+                text-align: center;
+                transition: transform 0.2s ease, background 0.2s ease;
+            }
+
+            .download-button:hover {
+                background: linear-gradient(180deg, #3a5228 0%, #2d4424 100%);
+                transform: scale(1.02);
+            }
+
+            .download-button:active {
+                transform: scale(0.98);
+            }
+
+            .download-button-wide {
+                flex: none;
+                width: 100%;
+            }
+        </style>
     </head>
     <body>
         <!-- Navigation -->
@@ -17,85 +116,72 @@
             <div class="nav-container">
                 <div class="nav-left">
                     <a href="index.html" class="nav-logo">
-                        <img src="images/moss-logo.svg" alt="Moss"/>
+                        <img src="images/moss-logo.svg" alt="Moss" class="nav-logo-desktop"/>
+                        <img src="images/icons/Moss-mark-square.svg" alt="Moss" class="nav-logo-mobile"/>
                     </a>
                     <div class="nav-links">
-                        <a href="index.html#what-is-moss" class="nav-link">What is Moss?</a>
-                        <a href="index.html#faq" class="nav-link">FAQ</a>
                         <a href="https://dev.theweave.social/" class="nav-link">Dev docs ↗</a>
                     </div>
                 </div>
                 <div class="nav-actions">
-                    <a href="access-form.html" class="nav-link-secondary">Join Early Movers Collective</a>
+                    <a href="https://app.formbricks.com/s/cmg8ct5x906hzxe01h503txyf" class="nav-link-secondary">Join Early Movers Collective</a>
                     <a href="download.html" class="nav-cta">Download Moss</a>
                 </div>
             </div>
         </nav>
 
-        <!-- Header Section -->
-        <section class="download-header">
-            <div class="download-header-container">
-                <h1 class="download-heading">Download Moss</h1>
-                <p class="download-version">v0.14.4 (Holochain 0.5.6)</p>
-                <p class="download-description">
-                    Get started with Moss on your platform. Choose your operating system below.
+        <!-- Download Page Content -->
+        <div class="download-page-container">
+            <h1 class="download-page-title">Get Moss</h1>
+
+            <!-- Mac Section -->
+            <div class="platform-section">
+                <div class="platform-header">
+                    <img src="images/platform_logos/apple_logo.svg" alt="" class="platform-icon"/>
+                    <span>Moss for Mac</span>
+                </div>
+                <div class="platform-buttons">
+                    <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.15.0/org.lightningrodlabs.moss-0.15-0.15.0-arm64.dmg" class="download-button">M-series</a>
+                    <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.15.0/org.lightningrodlabs.moss-0.15-0.15.0-x64.dmg" class="download-button">Intel</a>
+                </div>
+            </div>
+
+            <!-- Windows Section -->
+            <div class="platform-section">
+                <div class="platform-header">
+                    <img src="images/platform_logos/windows_logo.svg" alt="" class="platform-icon"/>
+                    <span>Moss for Windows</span>
+                </div>
+                <div class="platform-buttons">
+                    <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.15.0/org.lightningrodlabs.moss-0.15-0.15.0-setup.exe" class="download-button download-button-wide">Windows</a>
+                </div>
+            </div>
+
+            <!-- Linux Section -->
+            <div class="platform-section">
+                <div class="platform-header">
+                    <img src="images/platform_logos/linux_logo.svg" alt="" class="platform-icon"/>
+                    <span>Moss for Linux</span>
+                </div>
+                <div class="platform-buttons">
+                    <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.15.0/org.lightningrodlabs.moss-0.15-0.15.0-x86_64.AppImage" class="download-button">AppImage</a>
+                    <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.15.0/org.lightningrodlabs.moss-0.15-0.15.0-amd64.deb" class="download-button">.deb</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Graphic with Footer Text Overlay -->
+        <div class="bottom-graphic">
+            <img src="images/backgrounds/bottom-graphic.png" alt=""/>
+            <div class="footer-text-overlay">
+                <p>
+                    <span class="footer-muted">Brought to you by </span>
+                    <a href="https://lightningrodlabs.org/">Lightningrod Labs</a>
+                    <span class="footer-muted"> and </span>
+                    <a href="https://holochain.org">Holochain</a>
                 </p>
             </div>
-        </section>
-
-        <!-- Platform Downloads Section -->
-        <section class="download-platforms">
-            <div class="platform-grid">
-                <!-- Linux Platform -->
-                <div class="platform-card">
-                    <div class="platform-icon">
-                        <img src="images/platform_logos/linux_logo.svg" alt="Linux"/>
-                    </div>
-                    <h3 class="platform-name">Linux</h3>
-                    <div class="platform-downloads">
-                        <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.14.4/org.lightningrodlabs.moss-0.14-0.14.4-x86_64.AppImage" class="download-button">
-                            AppImage
-                        </a>
-                        <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.14.4/org.lightningrodlabs.moss-0.14-0.14.4-amd64.deb" class="download-button">
-                            .deb
-                        </a>
-                    </div>
-                </div>
-
-                <!-- macOS Platform -->
-                <div class="platform-card">
-                    <div class="platform-icon">
-                        <img src="images/platform_logos/apple_logo.svg" alt="macOS"/>
-                    </div>
-                    <h3 class="platform-name">macOS</h3>
-                    <div class="platform-downloads">
-                        <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.14.4/org.lightningrodlabs.moss-0.14-0.14.4-arm64.dmg" class="download-button">
-                            M-series
-                        </a>
-                        <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.14.4/org.lightningrodlabs.moss-0.14-0.14.4-x64.dmg" class="download-button">
-                            Intel
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Windows Platform -->
-                <div class="platform-card">
-                    <div class="platform-icon">
-                        <img src="images/platform_logos/windows_logo.svg" alt="Windows"/>
-                    </div>
-                    <h3 class="platform-name">Windows</h3>
-                    <div class="platform-downloads">
-                        <a href="https://github.com/lightningrodlabs/moss/releases/download/v0.14.4/org.lightningrodlabs.moss-0.14-0.14.4-setup.exe" class="download-button">
-                            Windows
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>Brought to you by <a href="https://lightningrodlabs.org/">Lightningrod Labs</a> and <a href="https://holochain.org">Holochain</a></p>
-        </footer>
+        </div>
     </body>
 </html>

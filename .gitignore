@@ -1,1 +1,13 @@
 .claude/
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+build/blog/
+
+# Ruby
+Gemfile.lock
+.bundle/
+vendor/
