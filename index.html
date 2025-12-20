@@ -1,0 +1,68 @@
+---
+layout: default
+title: Blog
+permalink: /
+---
+
+<div class="blog-index">
+    <header class="blog-index-header">
+        <div class="blog-index-header-container">
+            <h1 class="blog-index-title">Moss Blog</h1>
+            <p class="blog-index-subtitle">Updates and insights about peer-to-peer collaboration</p>
+        </div>
+    </header>
+
+    <div class="blog-posts-container">
+        {% if site.posts.size > 0 %}
+        <div class="blog-posts-grid">
+            {% for post in site.posts %}
+            <article class="blog-post-card">
+                <a href="{{ post.url | relative_url }}" class="post-card-link">
+                    {% if post.image %}
+                    <div class="post-card-image">
+                        <img src="{{ post.image }}" alt="{{ post.title }}">
+                    </div>
+                    {% else %}
+                    <div class="post-card-image-placeholder"></div>
+                    {% endif %}
+
+                    <div class="post-card-content">
+                        {% if post.tags %}
+                        <div class="post-card-tags">
+                            {% for tag in post.tags limit:2 %}
+                            <span class="post-card-tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <h2 class="post-card-title">{{ post.title }}</h2>
+
+                        {% if post.excerpt %}
+                        <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+                        {% endif %}
+
+                        <div class="post-card-meta">
+                            {% if post.author_image %}
+                            <img src="{{ post.author_image }}" alt="{{ post.author }}" class="post-card-author-avatar">
+                            {% else %}
+                            <div class="post-card-author-avatar-placeholder"></div>
+                            {% endif %}
+                            <div class="post-card-meta-text">
+                                <span class="post-card-author">{{ post.author | default: "Moss Team" }}</span>
+                                <time datetime="{{ post.date | date_to_xmlschema }}" class="post-card-date">
+                                    {{ post.date | date: "%-d %b %Y" }}
+                                </time>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="blog-empty-state">
+            <p>No posts yet. Check back soon!</p>
+        </div>
+        {% endif %}
+    </div>
+</div>

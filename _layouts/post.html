@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<article class="blog-post">
+    <div class="post-hero">
+        <div class="post-hero-container">
+            <div class="post-hero-content">
+                {% if page.tags %}
+                <div class="post-header-tags">
+                    {% for tag in page.tags %}
+                    <span class="post-header-tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <h1 class="post-hero-title">{{ page.title }}</h1>
+
+                <div class="post-hero-meta">
+                    {% if page.author_image %}
+                    <img src="{{ page.author_image }}" alt="{{ page.author }}" class="post-author-avatar">
+                    {% else %}
+                    <div class="post-author-avatar-placeholder"></div>
+                    {% endif %}
+                    <div class="post-meta-text">
+                        <span class="post-author-name">{{ page.author | default: "Moss Team" }}</span>
+                        <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">
+                            {{ page.date | date: "%-d %b %Y" }}
+                        </time>
+                    </div>
+                </div>
+            </div>
+
+            {% if page.image %}
+            <div class="post-hero-image">
+                <img src="{{ page.image }}" alt="{{ page.title }}">
+            </div>
+            {% else %}
+            <div class="post-hero-image-placeholder"></div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="post-content">
+        <div class="post-content-container">
+            {{ content }}
+        </div>
+    </div>
+
+    <footer class="post-footer">
+        <div class="post-footer-container">
+            <a href="{{ site.baseurl }}/" class="back-to-blog">← Back to all posts</a>
+        </div>
+    </footer>
+</article>

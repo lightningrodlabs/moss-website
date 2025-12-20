@@ -1,0 +1,71 @@
+# Jekyll Configuration for Moss Blog
+
+# Site Settings
+title: Moss Blog
+description: Updates and insights about Moss - peer-to-peer groupware for collective impact
+url: https://moss.social
+baseurl: "/blog"
+
+# Build Settings
+destination: build/blog
+source: .
+exclude:
+  - build/
+  - .claude/
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - index.html.bak
+
+# Permalink structure
+permalink: /:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Moss Team"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Site navigation (for blog)
+navigation:
+  - title: Home
+    url: /
+  - title: Blog
+    url: /blog/
+  - title: Download
+    url: /download.html
+
+# Moss branding colors (from your design system)
+moss_colors:
+  forest_dark: "#151a11"
+  moss_primary: "#e0eed5"
+  leaf_accent: "#a8c89f"
+  earth_bg: "#f5fcf0"
+  mycelium_light: "#e8e6dc"

@@ -1,0 +1,558 @@
+/* ========================================
+   Moss Blog Styles
+   Clean, modern blog design using Moss design system
+   ======================================== */
+
+/* Navigation - uses main site navigation from style.css */
+/* No blog-specific navigation overrides needed */
+
+/* Main Content Area */
+.blog-main {
+    min-height: calc(100vh - 200px);
+    background: white;
+}
+
+/* Blog Index */
+.blog-index {
+    background: linear-gradient(180deg, #f5fcf0 0%, #ffffff 100%);
+}
+
+.blog-index-header {
+    padding: var(--spacing-2xl, 120px) var(--spacing-md, 24px) var(--spacing-xl, 80px);
+    text-align: center;
+}
+
+.blog-index-header-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blog-index-title {
+    font-family: 'Mossville-v2', var(--heading-font-family);
+    font-size: 66px;
+    font-weight: 400;
+    line-height: 0.99;
+    letter-spacing: -1.98px;
+    color: black;
+    margin: 0 0 var(--spacing-md, 24px);
+}
+
+.blog-index-subtitle {
+    font-family: var(--body-font-family);
+    font-size: 20px;
+    line-height: 1.3;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+}
+
+/* Blog Posts Grid */
+.blog-posts-container {
+    background: white;
+    padding: var(--spacing-xl, 80px) var(--spacing-md, 24px);
+}
+
+.blog-posts-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--spacing-lg, 48px);
+}
+
+/* Post Card */
+.blog-post-card {
+    background: white;
+    border: 2px solid var(--color-moss-primary, #e0eed5);
+    border-radius: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.post-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Post Card Image */
+.post-card-image,
+.post-card-image-placeholder {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.post-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-card-image-placeholder {
+    background: linear-gradient(135deg, var(--color-moss-primary, #e0eed5) 0%, var(--color-leaf-accent, #a8c89f) 100%);
+}
+
+/* Post Card Content */
+.post-card-content {
+    padding: var(--spacing-md, 24px);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: white;
+    border-radius: 20px 20px 0 0;
+    margin-top: -20px;
+    position: relative;
+}
+
+.post-card-tags {
+    display: flex;
+    gap: var(--spacing-xs, 8px);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-sm, 16px);
+}
+
+.post-card-tag {
+    font-family: var(--body-font-family);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: white;
+    background: var(--color-leaf-accent, #a8c89f);
+    padding: 4px 12px;
+    border-radius: 12px;
+}
+
+.post-card-title {
+    font-family: 'Mossville-v2', var(--heading-font-family);
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: black;
+    margin: 0 0 var(--spacing-sm, 16px);
+}
+
+.post-card-excerpt {
+    font-family: var(--body-font-family);
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0 0 var(--spacing-md, 24px);
+    flex-grow: 1;
+}
+
+/* Post Card Meta (Author & Date) */
+.post-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.post-card-author-avatar,
+.post-card-author-avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.post-card-author-avatar {
+    object-fit: cover;
+}
+
+.post-card-author-avatar-placeholder {
+    background: linear-gradient(135deg, var(--color-leaf-accent, #a8c89f) 0%, var(--color-moss-primary, #e0eed5) 100%);
+}
+
+.post-card-meta-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.post-card-author {
+    font-family: var(--body-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+}
+
+.post-card-date {
+    font-family: var(--body-font-family);
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Empty State */
+.blog-empty-state {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--spacing-2xl, 120px) var(--spacing-md, 24px);
+}
+
+.blog-empty-state p {
+    font-family: var(--body-font-family);
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Individual Post */
+.blog-post {
+    background: white;
+}
+
+/* Post Hero (Two-column layout) */
+.post-hero {
+    background: var(--color-earth-bg, #f5fcf0);
+    padding: var(--spacing-2xl, 120px) var(--spacing-md, 24px);
+}
+
+.post-hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl, 80px);
+    align-items: center;
+}
+
+.post-hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md, 24px);
+}
+
+/* Post Header Tags */
+.post-header-tags {
+    display: flex;
+    gap: var(--spacing-xs, 8px);
+    flex-wrap: wrap;
+}
+
+.post-header-tag {
+    font-family: var(--body-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: white;
+    background: var(--color-leaf-accent, #a8c89f);
+    padding: 6px 14px;
+    border-radius: 14px;
+}
+
+.post-hero-title {
+    font-family: 'Mossville-v2', var(--heading-font-family);
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: black;
+    margin: 0;
+}
+
+/* Post Hero Meta (Author & Date) */
+.post-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.post-author-avatar,
+.post-author-avatar-placeholder {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.post-author-avatar {
+    object-fit: cover;
+}
+
+.post-author-avatar-placeholder {
+    background: linear-gradient(135deg, var(--color-leaf-accent, #a8c89f) 0%, var(--color-moss-primary, #e0eed5) 100%);
+}
+
+.post-meta-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.post-author-name {
+    font-family: var(--body-font-family);
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+
+.post-date {
+    font-family: var(--body-font-family);
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Post Hero Image */
+.post-hero-image,
+.post-hero-image-placeholder {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.post-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-hero-image-placeholder {
+    background: linear-gradient(135deg, var(--color-moss-primary, #e0eed5) 0%, var(--color-leaf-accent, #a8c89f) 100%);
+}
+
+/* Post Content */
+.post-content {
+    padding: var(--spacing-xl, 80px) var(--spacing-md, 24px);
+}
+
+.post-content-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Dropcap for first paragraph */
+.post-content-container > p:first-of-type::first-letter {
+    font-family: 'Mossville-v2', var(--heading-font-family);
+    font-size: 72px;
+    line-height: 0.8;
+    float: left;
+    margin: 8px 12px 0 0;
+    color: var(--color-forest-dark, #151a11);
+}
+
+.post-content-container h2 {
+    font-family: 'Mossville-v2', var(--heading-font-family);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: black;
+    margin: var(--spacing-lg, 48px) 0 var(--spacing-md, 24px);
+}
+
+.post-content-container h3 {
+    font-family: var(--body-font-family);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: black;
+    margin: var(--spacing-lg, 48px) 0 var(--spacing-sm, 16px);
+}
+
+.post-content-container p {
+    font-family: "Libre Baskerville", serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    color: #000;
+    margin: 0 0 var(--spacing-md, 24px);
+}
+
+.post-content-container ul,
+.post-content-container ol {
+    font-family: "Libre Baskerville", serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    color: #000;
+    margin: 0 0 var(--spacing-md, 24px);
+    padding-left: var(--spacing-lg, 48px);
+}
+
+.post-content-container li {
+    margin-bottom: var(--spacing-sm, 16px);
+}
+
+.post-content-container a {
+    color: var(--color-forest-dark);
+    text-decoration: underline;
+    text-decoration-color: var(--color-leaf-accent);
+    text-decoration-thickness: 2px;
+    transition: text-decoration-color 0.2s ease;
+}
+
+.post-content-container a:hover {
+    text-decoration-color: var(--color-forest-dark);
+}
+
+.post-content-container blockquote {
+    border-left: 4px solid var(--color-moss-primary);
+    padding-left: var(--spacing-md, 24px);
+    margin: var(--spacing-lg, 48px) 0;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.post-content-container code {
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 16px;
+    background: var(--color-moss-primary);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.post-content-container pre {
+    background: var(--color-forest-dark);
+    color: #e0eed5;
+    padding: var(--spacing-md, 24px);
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: var(--spacing-lg, 48px) 0;
+}
+
+.post-content-container pre code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+}
+
+.post-content-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: var(--spacing-lg, 48px) 0;
+}
+
+/* Post Footer */
+.post-footer {
+    padding: var(--spacing-xl, 80px) var(--spacing-md, 24px);
+    border-top: 1px solid var(--color-moss-primary);
+}
+
+.post-footer-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.back-to-blog {
+    font-family: var(--body-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-forest-dark);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.back-to-blog:hover {
+    opacity: 1;
+}
+
+/* Blog Footer */
+.blog-footer {
+    background: var(--color-earth-bg, #f5fcf0);
+    padding: var(--spacing-lg, 48px) var(--spacing-md, 24px);
+    border-top: 1px solid var(--color-moss-primary);
+}
+
+.blog-footer-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.blog-footer p {
+    font-family: var(--body-font-family);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: black;
+    margin: 0;
+}
+
+.footer-muted {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.blog-footer a {
+    color: black;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.blog-footer a:hover {
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .blog-index-header {
+        padding: var(--spacing-xl, 80px) var(--spacing-md, 24px) var(--spacing-lg, 48px);
+    }
+
+    .blog-index-title {
+        font-size: 42px;
+        letter-spacing: -1.26px;
+    }
+
+    .blog-posts-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md, 24px);
+    }
+
+    .post-card-image,
+    .post-card-image-placeholder {
+        height: 200px;
+    }
+
+    /* Single column layout for mobile */
+    .post-hero {
+        padding: var(--spacing-xl, 80px) var(--spacing-md, 24px);
+    }
+
+    .post-hero-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg, 48px);
+    }
+
+    .post-hero-title {
+        font-size: 36px;
+        letter-spacing: -1.08px;
+    }
+
+    .post-hero-image,
+    .post-hero-image-placeholder {
+        height: 300px;
+    }
+
+    .post-content-container h2 {
+        font-size: 28px;
+    }
+
+    .post-content-container p,
+    .post-content-container ul,
+    .post-content-container ol {
+        font-size: 17px;
+        line-height: 28px;
+    }
+
+    /* Smaller dropcap on mobile */
+    .post-content-container > p:first-of-type::first-letter {
+        font-size: 56px;
+        margin: 4px 8px 0 0;
+    }
+}
