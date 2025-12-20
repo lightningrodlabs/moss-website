@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://moss.social/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://moss.social/blog/" rel="alternate" type="text/html" /><updated>2025-12-19T22:28:23-05:00</updated><id>https://moss.social/blog/feed.xml</id><title type="html">Moss Blog</title><subtitle>Updates and insights about Moss - peer-to-peer groupware for collective impact</subtitle><entry><title type="html">Welcome to the Moss Blog</title><link href="https://moss.social/blog/2025/12/19/welcome-to-moss-blog/" rel="alternate" type="text/html" title="Welcome to the Moss Blog" /><published>2025-12-19T00:00:00-05:00</published><updated>2025-12-19T00:00:00-05:00</updated><id>https://moss.social/blog/2025/12/19/welcome-to-moss-blog</id><content type="html" xml:base="https://moss.social/blog/2025/12/19/welcome-to-moss-blog/"><![CDATA[<p>Welcome to the Moss blog! We’re excited to have this space to share updates, insights, and stories about building truly peer-to-peer collaboration tools.</p>
+
+<h2 id="what-is-moss">What is Moss?</h2>
+
+<p>Moss is a peer-to-peer, privacy-first groupware designed for small teams who want to work together without relying on centralized platforms. Built on Holochain technology, Moss gives groups:</p>
+
+<ul>
+  <li><strong>True ownership</strong> of their data and communications</li>
+  <li><strong>Customizable tools</strong> that adapt to their specific needs</li>
+  <li><strong>Privacy by design</strong> - no surveillance, no tracking</li>
+  <li><strong>Open source</strong> foundation for transparency and community contribution</li>
+</ul>
+
+<h2 id="why-were-building-this">Why We’re Building This</h2>
+
+<p>We believe people deserve better tools for collective work. Tools that respect privacy, enable true ownership, and put relationships at the center.</p>
+
+<p>The current landscape of collaboration software is dominated by platforms that:</p>
+
+<ul>
+  <li>Extract value from user data</li>
+  <li>Lock teams into proprietary ecosystems</li>
+  <li>Prioritize growth metrics over user needs</li>
+  <li>Can cut off access at any time</li>
+</ul>
+
+<p>Moss offers a different path forward.</p>
+
+<h2 id="what-to-expect-on-this-blog">What to Expect on This Blog</h2>
+
+<p>This blog will be a place to:</p>
+
+<ul>
+  <li>Share <strong>product updates</strong> and new features</li>
+  <li>Explore <strong>ideas about collaboration</strong> and peer-to-peer technology</li>
+  <li>Tell <strong>stories from the community</strong> using Moss</li>
+  <li>Discuss <strong>technical architecture</strong> for developers interested in building on Holochain</li>
+  <li>Announce <strong>events and workshops</strong> for the Moss community</li>
+</ul>
+
+<h2 id="get-involved">Get Involved</h2>
+
+<p>Moss is currently in group-onboarding beta. If you’re interested in being among the first to use Moss for your team:</p>
+
+<ul>
+  <li><a href="https://app.formbricks.com/s/cmg8ct5x906hzxe01h503txyf">Join the Early Movers Collective</a></li>
+  <li><a href="/download.html">Download Moss</a> and try it out</li>
+  <li>Contribute to the <a href="https://github.com/lightningrodlabs/moss">open source project</a></li>
+</ul>
+
+<p>We’re just getting started, and we’re excited to build this future together.</p>]]></content><author><name>Eric Harris-Braun</name></author><category term="announcement" /><category term="moss" /><category term="peer-to-peer" /><summary type="html"><![CDATA[We're excited to launch the Moss blog - a space to share updates, insights, and stories about building peer-to-peer collaboration tools.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://moss.social/blog/blog/assets/images/posts/welcome-hero.png" /><media:content medium="image" url="https://moss.social/blog/blog/assets/images/posts/welcome-hero.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
