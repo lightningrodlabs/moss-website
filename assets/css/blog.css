@@ -47,7 +47,7 @@
 
 /* Blog Posts Grid */
 .blog-posts-container {
-    background: white;
+    background: transparent;
     padding: var(--spacing-xl, 80px) var(--spacing-md, 24px);
 }
 
