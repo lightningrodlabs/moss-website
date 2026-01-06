@@ -123,12 +123,12 @@
 .post-card-tag {
     font-family: var(--body-font-family);
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: capitalize;
-    color: white;
-    background: var(--color-leaf-accent, #a8c89f);
-    padding: 4px 12px;
-    border-radius: 12px;
+    color: #3d4a38;
+    background: #e8f0e3;
+    padding: 8px 16px;
+    border-radius: 8px;
 }
 
 .post-card-title {
@@ -243,12 +243,12 @@
 .post-header-tag {
     font-family: var(--body-font-family);
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: capitalize;
-    color: white;
-    background: var(--color-leaf-accent, #a8c89f);
-    padding: 6px 14px;
-    border-radius: 14px;
+    color: #3d4a38;
+    background: #e8f0e3;
+    padding: 8px 18px;
+    border-radius: 8px;
 }
 
 .post-hero-title {

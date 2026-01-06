@@ -31,15 +31,14 @@ All edits should be made directly to files in the `build/` directory. This is a 
 
 ### Updating Version Numbers
 
-When a new Moss version is released, update the download links in both `build/download.html` and `build/index.html` (download overlay):
-1. Update all GitHub release URLs to point to the new version tag
-2. Ensure all platform download links (Linux AppImage, .deb, macOS M-series, macOS Intel, Windows) are updated
-
-Current version: **v0.15.0**
+When a new Moss version is released, update the download links in `build/download.html`:
+1. Update the version number in the heading (e.g., "v0.14.4 (Holochain 0.5.6)")
+2. Update all GitHub release URLs to point to the new version tag
+3. Ensure all platform download links (Linux AppImage, .deb, macOS M-series, macOS Intel, Windows) are updated
 
 The download URLs follow this pattern:
 ```
-https://github.com/lightningrodlabs/moss/releases/download/v{VERSION}/org.lightningrodlabs.moss-0.15-{VERSION}-{PLATFORM}
+https://github.com/lightningrodlabs/moss/releases/download/v{VERSION}/org.lightningrodlabs.moss-0.14-{VERSION}-{PLATFORM}
 ```
 
 ### Git Workflow

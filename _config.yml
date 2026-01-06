@@ -1,7 +1,7 @@
 # Jekyll Configuration for Moss Blog
 
 # Site Settings
-title: Moss Blog
+title: Moss blog
 description: Updates and insights about Moss - peer-to-peer groupware for collective impact
 url: https://moss.social
 baseurl: "/blog"
