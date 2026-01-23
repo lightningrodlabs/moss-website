@@ -1,0 +1,357 @@
+/* ============================
+   Tools Page Styles
+   ============================ */
+
+/* Active nav link */
+.nav-link-active {
+    opacity: 1 !important;
+    font-weight: 600;
+}
+
+/* Header Section */
+.tools-header {
+    background: linear-gradient(180deg, #f5fcf0 0%, #E0EED5 100%);
+    padding: 140px var(--spacing-md, 24px) 80px;
+    text-align: center;
+}
+
+.tools-header-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tools-heading {
+    font-family: 'Mossville-v2', var(--heading-font-family);
+    font-size: 66px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -1.98px;
+    color: black;
+    margin: 0 0 24px;
+}
+
+.tools-subheading {
+    font-family: var(--body-font-family);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+}
+
+/* Tools Section */
+.tools-section {
+    background: #F5F7F3;
+    padding: 80px var(--spacing-md, 24px);
+}
+
+.tools-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Category Sections */
+.tools-category {
+    margin-bottom: 60px;
+}
+
+.tools-category:last-child {
+    margin-bottom: 0;
+}
+
+.category-heading {
+    font-family: 'Mossville-v2', var(--heading-font-family);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: black;
+    margin: 0 0 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.category-description {
+    font-family: var(--body-font-family);
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    margin: -16px 0 24px;
+}
+
+/* Tools Grid */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+}
+
+/* Tool Card */
+.tool-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tool-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.tool-card-experimental {
+    opacity: 0.8;
+    border-style: dashed;
+}
+
+.tool-card-experimental:hover {
+    opacity: 1;
+}
+
+/* Tool Icon */
+.tool-icon {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #E0EED5 0%, #C3F3D9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tool-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tool Info */
+.tool-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.tool-title {
+    font-family: var(--body-font-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: black;
+    margin: 0 0 4px;
+}
+
+.tool-subtitle {
+    font-family: var(--body-font-family);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0 0 12px;
+}
+
+.tool-description {
+    font-family: var(--body-font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0 0 12px;
+}
+
+/* Tool Tags */
+.tool-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tool-tag {
+    font-family: var(--body-font-family);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.05);
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+/* Experimental Section */
+.tools-experimental {
+    padding-top: 40px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+/* CTA Section */
+.tools-cta-section {
+    background: linear-gradient(180deg, #E0EED5 0%, #C3F3D9 100%);
+    padding: 80px var(--spacing-md, 24px);
+    text-align: center;
+}
+
+.tools-cta-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tools-cta-heading {
+    font-family: 'Mossville-v2', var(--heading-font-family);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: black;
+    margin: 0 0 16px;
+}
+
+.tools-cta-text {
+    font-family: var(--body-font-family);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0 0 32px;
+}
+
+.tools-cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tools-cta-primary {
+    background: #151a11;
+    color: white;
+    font-family: var(--body-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 16px;
+    transition: background 0.2s ease;
+}
+
+.tools-cta-primary:hover {
+    background: linear-gradient(180deg, #3a5228 0%, #2d4424 100%);
+}
+
+.tools-cta-secondary {
+    background: white;
+    color: black;
+    font-family: var(--body-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background 0.2s ease;
+}
+
+.tools-cta-secondary:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Footer */
+.tools-footer {
+    background: #d8dad9;
+    padding: 24px var(--spacing-md, 24px);
+    text-align: center;
+}
+
+.tools-footer p {
+    font-family: var(--body-font-family);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: black;
+    margin: 0;
+}
+
+.tools-footer .footer-muted {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.tools-footer a {
+    color: black;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.tools-footer a:hover {
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tools-header {
+        padding: 100px var(--spacing-sm, 16px) 48px;
+    }
+
+    .tools-heading {
+        font-size: 42px;
+        letter-spacing: -1.26px;
+    }
+
+    .tools-subheading {
+        font-size: 16px;
+    }
+
+    .tools-section {
+        padding: 48px var(--spacing-sm, 16px);
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .tool-card {
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .tool-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .category-heading {
+        font-size: 28px;
+    }
+
+    .tools-category {
+        margin-bottom: 48px;
+    }
+
+    .tools-cta-section {
+        padding: 48px var(--spacing-sm, 16px);
+    }
+
+    .tools-cta-heading {
+        font-size: 28px;
+    }
+
+    .tools-cta-text {
+        font-size: 16px;
+    }
+
+    .tools-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tools-cta-primary,
+    .tools-cta-secondary {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
