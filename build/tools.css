@@ -8,6 +8,49 @@
     font-weight: 600;
 }
 
+/* Loading State */
+.tools-loading {
+    text-align: center;
+    padding: 80px 24px;
+    font-family: var(--body-font-family);
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.tools-loading::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 16px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Error State */
+.tools-error {
+    text-align: center;
+    padding: 80px 24px;
+    font-family: var(--body-font-family);
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.tools-error p {
+    margin: 0 0 12px;
+}
+
+.tools-error a {
+    color: black;
+    text-decoration: underline;
+}
+
 /* Header Section */
 .tools-header {
     background: linear-gradient(180deg, #f5fcf0 0%, #E0EED5 100%);
