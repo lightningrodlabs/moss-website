@@ -90,7 +90,7 @@ function createToolCard(tool, isExperimental = false) {
         <div class="tool-info">
             <h3 class="tool-title">${escapeHtml(tool.title)}</h3>
             <p class="tool-subtitle">${escapeHtml(tool.subtitle || '')}</p>
-            <p class="tool-description">${escapeHtml(tool.description || '')}</p>
+            <div class="tool-description">${renderMarkdown(tool.description || '')}</div>
             <div class="tool-tags">${tagsHtml}</div>
         </div>
     `;
@@ -103,6 +103,15 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+function renderMarkdown(text) {
+    if (!text) return '';
+    if (typeof marked === 'undefined' || typeof DOMPurify === 'undefined') {
+        return escapeHtml(text);
+    }
+    const html = marked.parse(text, { breaks: true, gfm: true });
+    return DOMPurify.sanitize(html, { USE_PROFILES: { html: true } });
 }
 
 function createCategorySection(categoryName, tools, isExperimental = false) {
