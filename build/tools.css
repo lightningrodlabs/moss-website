@@ -124,7 +124,7 @@
 /* Tools Grid */
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
     gap: 24px;
 }
 
@@ -203,6 +203,97 @@
     line-height: 1.5;
     color: rgba(0, 0, 0, 0.8);
     margin: 0 0 12px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Markdown content within tool descriptions.
+   globals.css imports meyer-reset, which strips heading sizes, list
+   bullets, and margins — these rules restore them, scoped to the card. */
+.tool-description > *:first-child {
+    margin-top: 0;
+}
+
+.tool-description > *:last-child {
+    margin-bottom: 0;
+}
+
+.tool-description h1,
+.tool-description h2,
+.tool-description h3,
+.tool-description h4,
+.tool-description h5,
+.tool-description h6 {
+    font-family: var(--body-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: black;
+    margin: 14px 0 4px;
+}
+
+.tool-description p {
+    margin: 0 0 8px;
+}
+
+.tool-description ul,
+.tool-description ol {
+    margin: 0 0 8px;
+    padding-left: 20px;
+}
+
+.tool-description ul {
+    list-style: disc;
+}
+
+.tool-description ol {
+    list-style: decimal;
+}
+
+.tool-description li {
+    margin: 0 0 3px;
+}
+
+.tool-description a {
+    color: #2d4424;
+    text-decoration: underline;
+}
+
+.tool-description strong {
+    font-weight: 600;
+}
+
+.tool-description em {
+    font-style: italic;
+}
+
+.tool-description code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+.tool-description pre {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 0 0 8px;
+}
+
+.tool-description pre code {
+    background: none;
+    padding: 0;
+}
+
+.tool-description blockquote {
+    margin: 0 0 8px;
+    padding-left: 12px;
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.6);
 }
 
 /* Tool Tags */
