@@ -46,4 +46,4 @@ Featured images for blog posts should be placed in:
 
 ### Available Post Images
 
-- `welcome-hero.png` - Moss dashboard screenshot (5.7MB)
+- The welcome post uses the main page screenshot, `/images/screenshots/Moss-home.png`

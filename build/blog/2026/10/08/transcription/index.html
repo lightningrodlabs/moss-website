@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local AI, together - Moss blog</title>
+
+    <!-- Moss global styles -->
+    <link rel="stylesheet" href="/globals.css"/>
+    <link rel="stylesheet" href="/styleguide.css"/>
+    <link rel="stylesheet" href="/style.css?v=1791587429"/>
+
+    <!-- Blog-specific styles -->
+    <link rel="stylesheet" href="/blog/assets/css/blog.css?v=1791587429"/>
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Local AI, together | Moss blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Local AI, together" />
+<meta name="author" content="Eric Harris-Braun" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Moss now turns speech into text on your own computer, and Presence uses it so a whole call gets transcribed with nobody’s voice leaving their machine. Any Moss tool can use it." />
+<meta property="og:description" content="Moss now turns speech into text on your own computer, and Presence uses it so a whole call gets transcribed with nobody’s voice leaving their machine. Any Moss tool can use it." />
+<link rel="canonical" href="https://moss.social/blog/2026/10/08/transcription/" />
+<meta property="og:url" content="https://moss.social/blog/2026/10/08/transcription/" />
+<meta property="og:site_name" content="Moss blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-10-08T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Local AI, together" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Eric Harris-Braun"},"dateModified":"2026-10-08T00:00:00-04:00","datePublished":"2026-10-08T00:00:00-04:00","description":"Moss now turns speech into text on your own computer, and Presence uses it so a whole call gets transcribed with nobody’s voice leaving their machine. Any Moss tool can use it.","headline":"Local AI, together","mainEntityOfPage":{"@type":"WebPage","@id":"https://moss.social/blog/2026/10/08/transcription/"},"url":"https://moss.social/blog/2026/10/08/transcription/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link type="application/atom+xml" rel="alternate" href="https://moss.social/blog/feed.xml" title="Moss blog" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="site-navigation">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="/" class="nav-logo">
+                    <img src="/images/moss-logo.svg" alt="Moss" class="nav-logo-desktop"/>
+                    <img src="/images/icons/Moss-mark-square.svg" alt="Moss" class="nav-logo-mobile"/>
+                </a>
+                <div class="nav-links">
+                    <a href="/tools.html" class="nav-link">Tools</a>
+                    <a href="/blog/" class="nav-link">Blog</a>
+                    <a href="https://docs.moss.social" class="nav-link">Docs ↗</a>
+                    <a href="https://dev.theweave.social/" class="nav-link">Dev docs ↗</a>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <!-- Mobile-only menu button -->
+                <button class="nav-mobile-menu" aria-label="Menu" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="6" r="1.5" fill="currentColor"/>
+                        <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                        <circle cx="12" cy="18" r="1.5" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="blog-main">
+        <article class="blog-post">
+    <div class="post-hero">
+        <div class="post-hero-container">
+            <div class="post-hero-content">
+                <a href="/blog/" class="back-to-blog">← All posts</a>
+
+                
+                <div class="post-header-tags">
+                    
+                    <span class="post-header-tag">local-ai</span>
+                    
+                    <span class="post-header-tag">transcription</span>
+                    
+                    <span class="post-header-tag">video-calls</span>
+                    
+                    <span class="post-header-tag">privacy</span>
+                    
+                </div>
+                
+
+                <h1 class="post-hero-title">Local AI, together</h1>
+
+                <div class="post-hero-meta">
+                    
+                    <img src="/blog/assets/images/authors/eric.jpg" alt="Eric Harris-Braun" class="post-author-avatar">
+                    
+                    <div class="post-meta-text">
+                        <span class="post-author-name">Eric Harris-Braun</span>
+                        <time datetime="2026-10-08T00:00:00-04:00" class="post-date">
+                            8 Oct 2026
+                        </time>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+            <div class="post-hero-image">
+                <img src="/blog/assets/images/posts/transcription/screenshots/presence-transcribing.png" alt="Local AI, together">
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="post-content">
+        <div class="post-content-container">
+            <p>
+    Moss can now turn speech into text. It does this on your own computer, with an open speech
+    model, and nothing you say is sent anywhere to be processed. That part is what people usually
+    mean by "local AI", and it's good. But it's the smaller half of what we've done.
+</p>
+<p>
+    The larger half is the pattern: collaborative transcription. Instead of one machine listening to
+    everyone, each person's computer transcribes that person's own voice and shares the text with the
+    others. The transcript the group sees is assembled from pieces that each came from the speaker's
+    own machine. Nobody's audio goes to a server, and nobody's audio goes to anyone else's AI either.
+    We've implemented this in Presence, our video call tool, and it's what we mean by collaborative
+    local AI.
+</p>
+
+<h2>A call that transcribes itself</h2>
+<p>
+    Anyone in a Presence call can ask for transcription. Everyone else gets a yes-or-no prompt, and
+    those who say yes start transcribing their own microphone. You can also set your copy of Presence
+    to say yes automatically. Each person's words show up in the room's transcript as they finish a
+    sentence, labelled with their name, and a small subtitles icon on their tile shows who is
+    transcribing.
+</p>
+<figure class="post-figure">
+    <img src="/blog/assets/images/posts/transcription/screenshots/presence-transcribing.png" alt="A Presence call between two people with the transcript open over one tile, showing a line from each speaker and a header reading transcribing: you, zippy-laptop">
+    <figcaption>A Presence call with the transcript open. Each line comes from the speaker's own computer, and the header lists who is transcribing.</figcaption>
+</figure>
+<p>
+    The pattern has some really nice advantages, and you can see each one in how Presence does it.
+</p>
+<ul>
+    <li>
+        <b>The cleanest audio.</b> Each computer hears its owner's voice straight from the microphone,
+        before it's compressed and sent over the network. Presence reads the raw microphone track, so
+        the model works from the best signal there is, not from what survived the call.
+    </li>
+    <li>
+        <b>Attribution for free.</b> The person who transcribed a line is the person who said it. Presence
+        never has to work out who was speaking; every line arrives already labelled, from the speaker's
+        own Moss.
+    </li>
+    <li>
+        <b>The work is spread out.</b> Each computer transcribes one voice. A call with eight people
+        costs each of them the same as a call with two, and no one machine has to be big enough to
+        transcribe everyone.
+    </li>
+    <li>
+        <b>Each person decides.</b> Transcription is something you turn on for yourself, not something
+        done to you. In Presence you say yes or no to a request, and only your own voice is affected by
+        your answer.
+    </li>
+</ul>
+<p>
+    Presence keeps a transcript per visit to a room, from when you join to when you leave, with
+    everyone's lines in it. You can look at past transcripts from the room's card, read them, download
+    them as Markdown, or delete them. They're stored on your computer, like everything else in Moss.
+</p>
+
+<h2>One service, every tool</h2>
+<figure class="post-figure float-right">
+    <img class="cutout" src="/blog/assets/images/posts/transcription/screenshots/foyer-dictation.png" alt="The Foyer message box in Moss, with a microphone button beside the send button and a tooltip reading Dictate a message">
+    <figcaption>The microphone button next to the Foyer message box.</figcaption>
+</figure>
+<p>
+    Presence is the first tool to use transcription, but it doesn't own it. Transcription is a Moss
+    service, and any tool can ask for it. Moss itself already uses it in a second place: the Foyer, each
+    group's built-in chat, has a microphone button next to the message box, so you can dictate a message,
+    fix it up, and send it.
+    You turn the service on under Settings → Services → Transcription,
+    next to Local Discovery from <a href="/blog/2026/09/30/local-first/">last week's post</a>. It's off by default.
+    The first time a tool asks to use it, Moss asks you, and you can withdraw that permission later from
+    the same place.
+</p>
+<figure class="post-figure">
+    <img src="/blog/assets/images/posts/transcription/screenshots/transcription-settings.png" alt="The Transcription tab under Settings → Services in Moss, with the Enabled switch, a list of tool permissions showing Presence as allowed, and a list of speech models to choose from">
+    <figcaption>The Transcription service: the switch, which tools have access, and which model runs.</figcaption>
+</figure>
+<p>
+    This is the pattern we want for Moss. Running a speech model is a big thing to ask of a tool: there's
+    a 140 MB model to ship, a runtime to build for every platform, and memory to manage. If every tool
+    did that on its own, you'd have five copies of the same model and five switches to find. Instead,
+    Moss does it once, and a notes tool that wants to transcribe a recording, or a chat tool that wants
+    voice input like the Foyer's, gets it with a few lines of code. And because Moss does it, you decide once, in one
+    place, what the AI on your machine is allowed to hear.
+</p>
+<p>
+    Transcription is the first service of this kind. The same shape, a model Moss runs on your machine
+    that tools ask to use with your permission, will carry the others we have planned.
+</p>
+<div class="post-callout">
+    <p>
+        <b>For the adventurous:</b> transcription is in
+        <a href="https://github.com/lightningrodlabs/moss/releases/tag/v0.16.0-dev.10-test.23">Moss 0.16.0-dev.10</a>,
+        which is where you can download other speech models, including multilingual ones, from the
+        Transcription settings. Moss comes with an English-only model, so it works out of the box.
+        The call transcripts are in Presence 0.16.0. Both are dev releases, meant for testing, so expect
+        rough edges. Everyone you want to try it with needs the same Moss version.
+    </p>
+</div>
+
+<h2>For the technically curious</h2>
+<p>
+    <i>Feel free to skip this part.</i>
+</p>
+<ul>
+    <li>
+        <b>The runtime</b> is <a href="https://github.com/ggml-org/whisper.cpp">whisper.cpp</a>, built
+        per platform and run by Moss's main process as a sidecar whisper-server. Moss ships the
+        <code>ggml-base.en</code> model (about 141 MB). From dev.10, Settings also lets you download and
+        switch to others, from tiny to larger multilingual ones. The model loads on first use, which takes one
+        to ten seconds, stays loaded while any session is open, and unloads after five minutes idle.
+    </li>
+    <li>
+        <b>The API</b> is <code>weaveClient.localModels.asr</code> in <code>@theweave/api</code>. A tool
+        checks <code>capabilities()</code>, opens a session, pushes PCM16 audio at whatever sample rate it
+        has, and gets back one event per utterance. Moss resamples, runs an energy-based voice activity
+        detector, and commits a transcript after about 500 ms of silence. The full guide is
+        <a href="https://github.com/lightningrodlabs/moss/blob/main-0.7/docs/build/transcription.md">docs/build/transcription.md</a>
+        in the Moss repo.
+    </li>
+    <li>
+        <b>Consent</b> has two gates: the global switch in Settings, and a per-tool decision Moss asks
+        for the first time a tool opens a session. Turning the switch off, or revoking a tool, closes its
+        open sessions.
+    </li>
+    <li>
+        <b>Presence</b> reads the raw microphone track, before mixing and before WebRTC encoding, so
+        shared system audio is never transcribed as the speaker's words. Each committed utterance goes to
+        the other participants over the room's existing signal channel, which means it's signed by the
+        speaker's own agent key. Transcripts are stored per visit in IndexedDB and rendered to Markdown
+        on demand.
+    </li>
+    <li>
+        <b>What's next</b> is a fallback where another participant volunteers to transcribe for someone
+        whose machine can't.
+    </li>
+</ul>
+
+        </div>
+    </div>
+
+    <footer class="post-footer">
+        <div class="post-footer-container">
+            <a href="/blog/" class="back-to-blog">← Back to all posts</a>
+        </div>
+    </footer>
+</article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="blog-footer">
+        <div class="blog-footer-container">
+            <p>
+                <span class="footer-muted">Brought to you by </span>
+                <a href="https://lightningrodlabs.org/">Lightningrod Labs</a>
+                <span class="footer-muted"> and </span>
+                <a href="https://holochain.org">Holochain</a>
+                <span class="footer-muted"> · © 2026 Harris-Braun Enterprises, LLC</span>
+            </p>
+        </div>
+    </footer>
+    <script src="/nav-menu.js?v=1791587429"></script>
+</body>
+</html>

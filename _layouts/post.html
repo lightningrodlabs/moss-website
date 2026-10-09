@@ -6,6 +6,8 @@ layout: default
     <div class="post-hero">
         <div class="post-hero-container">
             <div class="post-hero-content">
+                <a href="{{ site.baseurl }}/" class="back-to-blog">← All posts</a>
+
                 {% if page.tags %}
                 <div class="post-header-tags">
                     {% for tag in page.tags %}
@@ -31,9 +33,16 @@ layout: default
                 </div>
             </div>
 
-            {% if page.image %}
-            <div class="post-hero-image">
-                <img src="{{ page.image }}" alt="{{ page.title }}">
+            {% assign hero_image = page.image | default: page.card_image %}
+            {% if hero_image %}
+            <div class="post-hero-image{% if page.card_image_fit == 'contain' %} post-hero-image-contain{% endif %}">
+                <img src="{{ hero_image }}" alt="{{ page.title }}">
+            </div>
+            {% elsif page.card_icons %}
+            <div class="post-hero-image-placeholder post-hero-icons">
+                {% for icon in page.card_icons %}
+                <img src="{{ icon }}" alt="">
+                {% endfor %}
             </div>
             {% else %}
             <div class="post-hero-image-placeholder"></div>

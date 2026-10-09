@@ -8,10 +8,10 @@
     <!-- Moss global styles -->
     <link rel="stylesheet" href="/globals.css"/>
     <link rel="stylesheet" href="/styleguide.css"/>
-    <link rel="stylesheet" href="/style.css"/>
+    <link rel="stylesheet" href="/style.css?v={{ site.time | date: '%s' }}"/>
 
     <!-- Blog-specific styles -->
-    <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}"/>
+    <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}?v={{ site.time | date: '%s' }}"/>
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -30,10 +30,21 @@
                     <img src="/images/icons/Moss-mark-square.svg" alt="Moss" class="nav-logo-mobile"/>
                 </a>
                 <div class="nav-links">
+                    <a href="/tools.html" class="nav-link">Tools</a>
                     <a href="{{ site.baseurl }}/" class="nav-link">Blog</a>
                     <a href="https://docs.moss.social" class="nav-link">Docs ↗</a>
                     <a href="https://dev.theweave.social/" class="nav-link">Dev docs ↗</a>
                 </div>
+            </div>
+            <div class="nav-actions">
+                <!-- Mobile-only menu button -->
+                <button class="nav-mobile-menu" aria-label="Menu" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="6" r="1.5" fill="currentColor"/>
+                        <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                        <circle cx="12" cy="18" r="1.5" fill="currentColor"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
@@ -51,8 +62,10 @@
                 <a href="https://lightningrodlabs.org/">Lightningrod Labs</a>
                 <span class="footer-muted"> and </span>
                 <a href="https://holochain.org">Holochain</a>
+                <span class="footer-muted"> · © {{ site.time | date: '%Y' }} Harris-Braun Enterprises, LLC</span>
             </p>
         </div>
     </footer>
+    <script src="/nav-menu.js?v={{ site.time | date: '%s' }}"></script>
 </body>
 </html>

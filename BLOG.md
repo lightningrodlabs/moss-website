@@ -59,8 +59,11 @@ Your content here in Markdown...
 - `image`: Path to featured image (optional, shows gradient placeholder if not provided)
   - Place images in: `assets/images/posts/`
   - Reference as: `/blog/assets/images/posts/filename.png`
-- `tags`: Array of tags (optional, max 2 shown on cards)
-- `excerpt`: Summary text (optional, auto-generated if not provided)
+- `card_image`: Image for the blog index card only (optional, falls back to `image`)
+- `card_image_fit`: Set to `contain` to show the whole card image (a logo, say) on the gradient instead of cropping it (optional)
+- `card_icons`: List of icon paths shown as a grid on the index card when there is no card image (optional)
+- `tags`: Array of tags (optional, max 4 shown on cards)
+- `excerpt`: Summary for SEO and the RSS feed (optional, auto-generated if not provided). Index cards show the opening of the post body, faded out
 
 See `AUTHORS.md` for complete author reference.
 

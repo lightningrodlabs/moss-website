@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Welcome to the Moss Blog"
-date: 2025-12-19
+date: 2026-09-11
 author: Eric Harris-Braun
 author_image: /blog/assets/images/authors/eric.jpg
-image: /blog/assets/images/posts/welcome-hero.png
-tags: [announcement, moss, peer-to-peer]
+image: /images/screenshots/Moss-home.png
+tags: [announcement, moss]
 excerpt: "We're excited to launch the Moss blog - a space to share updates, insights, and stories about building peer-to-peer collaboration tools."
 ---
 

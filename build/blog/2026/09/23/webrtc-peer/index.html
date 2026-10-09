@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC without a signaling server - Moss blog</title>
+
+    <!-- Moss global styles -->
+    <link rel="stylesheet" href="/globals.css"/>
+    <link rel="stylesheet" href="/styleguide.css"/>
+    <link rel="stylesheet" href="/style.css?v=1791587429"/>
+
+    <!-- Blog-specific styles -->
+    <link rel="stylesheet" href="/blog/assets/css/blog.css?v=1791587429"/>
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>WebRTC without a signaling server | Moss blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="WebRTC without a signaling server" />
+<meta name="author" content="Eric Harris-Braun" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="WebRTC is supposed to be peer-to-peer, and it is not. @lightningrodlabs/webrtc-peer gives a peer-to-peer app a managed RTCPeerConnection per peer over whatever message channel it already has. This post is about removing the signaling server, and about the plan for large calls with no server at all." />
+<meta property="og:description" content="WebRTC is supposed to be peer-to-peer, and it is not. @lightningrodlabs/webrtc-peer gives a peer-to-peer app a managed RTCPeerConnection per peer over whatever message channel it already has. This post is about removing the signaling server, and about the plan for large calls with no server at all." />
+<link rel="canonical" href="https://moss.social/blog/2026/09/23/webrtc-peer/" />
+<meta property="og:url" content="https://moss.social/blog/2026/09/23/webrtc-peer/" />
+<meta property="og:site_name" content="Moss blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-23T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="WebRTC without a signaling server" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Eric Harris-Braun"},"dateModified":"2026-09-23T00:00:00-04:00","datePublished":"2026-09-23T00:00:00-04:00","description":"WebRTC is supposed to be peer-to-peer, and it is not. @lightningrodlabs/webrtc-peer gives a peer-to-peer app a managed RTCPeerConnection per peer over whatever message channel it already has. This post is about removing the signaling server, and about the plan for large calls with no server at all.","headline":"WebRTC without a signaling server","mainEntityOfPage":{"@type":"WebPage","@id":"https://moss.social/blog/2026/09/23/webrtc-peer/"},"url":"https://moss.social/blog/2026/09/23/webrtc-peer/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link type="application/atom+xml" rel="alternate" href="https://moss.social/blog/feed.xml" title="Moss blog" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="site-navigation">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="/" class="nav-logo">
+                    <img src="/images/moss-logo.svg" alt="Moss" class="nav-logo-desktop"/>
+                    <img src="/images/icons/Moss-mark-square.svg" alt="Moss" class="nav-logo-mobile"/>
+                </a>
+                <div class="nav-links">
+                    <a href="/tools.html" class="nav-link">Tools</a>
+                    <a href="/blog/" class="nav-link">Blog</a>
+                    <a href="https://docs.moss.social" class="nav-link">Docs ↗</a>
+                    <a href="https://dev.theweave.social/" class="nav-link">Dev docs ↗</a>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <!-- Mobile-only menu button -->
+                <button class="nav-mobile-menu" aria-label="Menu" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="6" r="1.5" fill="currentColor"/>
+                        <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                        <circle cx="12" cy="18" r="1.5" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="blog-main">
+        <article class="blog-post">
+    <div class="post-hero">
+        <div class="post-hero-container">
+            <div class="post-hero-content">
+                <a href="/blog/" class="back-to-blog">← All posts</a>
+
+                
+                <div class="post-header-tags">
+                    
+                    <span class="post-header-tag">webrtc</span>
+                    
+                    <span class="post-header-tag">video-calls</span>
+                    
+                    <span class="post-header-tag">signaling</span>
+                    
+                    <span class="post-header-tag">dev</span>
+                    
+                </div>
+                
+
+                <h1 class="post-hero-title">WebRTC without a signaling server</h1>
+
+                <div class="post-hero-meta">
+                    
+                    <img src="/blog/assets/images/authors/eric.jpg" alt="Eric Harris-Braun" class="post-author-avatar">
+                    
+                    <div class="post-meta-text">
+                        <span class="post-author-name">Eric Harris-Braun</span>
+                        <time datetime="2026-09-23T00:00:00-04:00" class="post-date">
+                            23 Sep 2026
+                        </time>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+            <div class="post-hero-image post-hero-image-contain">
+                <img src="/blog/assets/images/posts/webrtc-peer/webrtc-logo.svg" alt="WebRTC without a signaling server">
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="post-content">
+        <div class="post-content-container">
+            <p>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API">WebRTC</a> is supposed to be
+    peer-to-peer. In practice, it is not. Almost every WebRTC call today depends on servers that
+    someone has to run. The libraries that support WebRTC carry that centralized assumption into
+    their design. This post is about pulling WebRTC back toward peer-to-peer. It is also about the
+    tooling that Holochain apps, and the rest of the peer-to-peer world, need to get there.
+</p>
+<p>
+    Two libraries came out of the work on <a href="https://github.com/lightningrodlabs/presence">Presence</a>,
+    our video-call tool for <a href="https://moss.social">Moss</a>, and we extracted both to that end.
+    This post is about the first, <a href="https://www.npmjs.com/package/@lightningrodlabs/webrtc-peer">@lightningrodlabs/webrtc-peer</a>.
+    You give it two callbacks: one that sends a message to a peer, and one that you call when a message
+    arrives. It gives you back a managed WebRTC connection for each peer, over whatever peer-to-peer
+    channel your app already has. The next post is about the second library, and about what we do when
+    WebRTC cannot connect at all.
+</p>
+
+<h2>The two servers in the middle</h2>
+<p>
+    WebRTC is peer-to-peer after it connects. Two servers stand in the way of connecting. The first is
+    the <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling">signaling server</a>.
+    Before any media flows, two browsers must exchange an offer, an answer, and a stream of
+    <a href="https://developer.mozilla.org/en-US/docs/Glossary/ICE">ICE</a> candidates, which are
+    network addresses to try. WebRTC says nothing about how those setup messages travel. So every
+    tutorial starts with a server to carry them, usually a WebSocket relay, and every deployment keeps
+    that server forever.
+</p>
+<p>
+    The second is the relay. Two peers behind strict routers sometimes cannot
+    <a href="https://en.wikipedia.org/wiki/Hole_punching_(networking)">hole-punch</a>, that is, open a
+    direct path to each other. Then the only way through is a
+    <a href="https://developer.mozilla.org/en-US/docs/Glossary/TURN">TURN</a> server, which relays the
+    media, and every serious deployment runs one. Traffic through it is not peer-to-peer at all. This
+    post is about removing the first server. The relay is a harder problem, and it is the subject of
+    the next post.
+</p>
+<p>
+    In a Holochain app, the signaling server is not needed. Agents can already send messages directly
+    to each other, through what Holochain calls <a href="https://developer.holochain.org/build/signals/#remote-signals">remote signals</a>.
+    The network layer under Holochain handles
+    <a href="https://en.wikipedia.org/wiki/NAT_traversal">NAT traversal</a> and relaying, because
+    everything else needs them too. NAT traversal is how two peers behind home routers reach each
+    other. Presence did its WebRTC signaling this way from the start. There is no server, and the offer
+    goes to the other agent the same way a chat message does.
+</p>
+<p>
+    That is the good news, and it is real. The less good news is what remains after the signaling
+    problem goes away: a raw <a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection"><code>RTCPeerConnection</code></a>,
+    which gives you primitives, not a connection.
+</p>
+<p>
+    You must handle both sides negotiating at the same time, because that corrupts the
+    signaling state if you let it happen. You must decide when a dropped ICE path deserves a quick
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/restartIce">ICE restart</a>
+    and when it needs a full teardown. You must also decide how long to wait between tries.
+    You must collapse four separate state machines (ICE, <a href="https://en.wikipedia.org/wiki/Datagram_Transport_Layer_Security">DTLS</a>,
+    signaling, and the <a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel">data channel</a>)
+    into one answer that your UI can show. When a connection fails on a laptop in another country, you
+    need a structured record of what happened, not console logs.
+</p>
+
+<h2>Two years with simple-peer</h2>
+<p>
+    Presence started in December 2023, and <a href="https://github.com/matthme">matthme</a> built it on
+    <a href="https://github.com/feross/simple-peer">simple-peer</a>, the library most people reach
+    for. It served us for two years, and I do not want to be unkind to it. But like most WebRTC
+    libraries, it assumes what a signaling server gives you. That means a reliable, ordered channel,
+    and one side told in advance that it starts the call. Over a peer-to-peer channel, neither holds. By early 2026
+    we maintained a fork, and the field logs kept describing the same kind of failure, each time in a
+    different form.
+</p>
+<p>
+    The failure that finally moved us was a reconnection loop that we captured in March. A peer on a
+    VPN connected fine the first time. Then something ordinary happened, such as a video toggle or an
+    ICE timeout, and the connection dropped. After that, every reconnection attempt failed. ICE checked
+    for fifteen seconds, went to disconnected, and retried a quarter of a second later, forever, until
+    the user left the room.
+</p>
+<p>
+    Leaving and waiting was the only cure, and the timing told the story. If the user came back after
+    ten seconds, it failed again. If they came back after fifty seconds, it worked. Our retries hammered
+    a NAT that wanted to be left alone, and the harder we retried, the longer it sulked. Retrying is not
+    recovering.
+</p>
+<p>
+    At the end of March, I rewrote the connection layer as a proper state machine. It uses the W3C
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Perfect_negotiation">"perfect negotiation"</a>
+    pattern for glare, the case where both sides send an offer at once. With it,
+    two simultaneous offers resolve instead of corrupting the state, and nobody has to be told in
+    advance who starts. A serialized signaling queue makes
+    sure that <a href="https://developer.mozilla.org/en-US/docs/Glossary/SDP">SDP</a> operations, the offer and
+    answer steps, cannot interleave.
+</p>
+<p>
+    There is one lifecycle, from idle through signaling, connecting, connected, reconnecting,
+    disconnected, failed, and closed. Its transitions are guarded, so the machine logs an illegal move
+    instead of silently taking it. A two-tier reconnection policy tries a cheap ICE restart first, and
+    a full reconnect only after that, with backoff. A transition log captures a snapshot of every
+    transport state on every move, because the thing we missed most was evidence.
+</p>
+<p>
+    For a few months, the old and new connection layers ran side by side in Presence, and the app
+    chose one per peer. That let us compare them in real rooms. We deleted simple-peer from the
+    codebase at the end of July.
+</p>
+
+<h2>Pulling it out</h2>
+<p>
+    The connection code knew nothing about Holochain, apart from a small adapter that turned "send
+    this to that agent" into a remote signal. So on May 20 it became a package, for any peer-to-peer
+    app that has its own way to move messages. It asks three things of your transport:
+</p>
+<ul>
+    <li>A stable, authenticated identity per peer. The library assigns polite and impolite negotiation
+        roles by comparing peer ids, and it trusts you about who is talking.</li>
+    <li>Agent-to-agent delivery, not broadcast.</li>
+    <li>Best-effort delivery. The library tolerates loss, reordering, and duplicates. A session id
+        scoped to the connection filters out signals left over from a previous attempt.</li>
+</ul>
+<p>
+    You do not need a reliable ordered channel, a relay, or a rendezvous service. Anything that can
+    carry an opaque JSON blob from one peer to another will do: Holochain remote signals, a
+    <a href="https://libp2p.io/">libp2p</a> stream, or a plain WebSocket.
+</p>
+<p>
+    It is layered, so you take only the tier that you need. The core is a thin perfect-negotiation
+    wrapper around <code>RTCPeerConnection</code>. On top of that sits the single-peer state machine
+    with the reconnection policy. On top of that sits a <code>ConnectionManager</code>. It owns every
+    peer in a room, routes inbound signals to the right one, propagates your local media, and exposes a
+    view model per peer. The view model has the phase, whether the path is relayed, whether tracks are
+    flowing, and a retry countdown.
+</p>
+<p>
+    It has no runtime dependencies. The browser's <code>RTCPeerConnection</code> is injectable, so the
+    whole library runs headless under a mock in a few seconds. Presence also runs it nightly against
+    real connections in a browser harness. The harness establishes connections, silently drops them,
+    and hands them over. A mock can only fail in the ways that you taught it to.
+</p>
+
+<h2>What it does not do</h2>
+<p>
+    Discovery, identity, authentication, and transport are the job of your peer-to-peer substrate,
+    and in our case that is Holochain. It cannot conjure a path where there is none. If two peers
+    cannot hole-punch and nobody runs a TURN server, the state machine will tell you precisely that
+    it failed. That is all it can do, and it is the relay problem from the start of this post. The bytes for the offer got through, after all, and that is where the second library
+    starts.
+</p>
+
+<h2>Large calls without a server</h2>
+<p>
+    Today the library does mesh only. Every peer connects to every other peer and sends its media to
+    each one. That works for a small room. But the number of connections, and the upload bandwidth
+    each peer needs, grow with the square of the number of peers. A mesh call with video maxes out at
+    a handful of people.
+</p>
+<p>
+    The usual answer is an <a href="https://bloggeek.me/webrtcglossary/sfu/">SFU</a>, a selective
+    forwarding unit. An SFU receives each peer's media once and forwards it to everyone else. It is
+    another server in the middle, and it is the reason most video-call products are not peer-to-peer
+    even when a call is small.
+</p>
+<p>
+    Our plan is a distributed SFU. Instead of a server, peers with spare bandwidth volunteer to forward
+    media for the room. A volunteer receives each source once and forwards a chosen subset to the peers
+    that subscribe to it. Every node in the room is still a participant, so the call stays
+    peer-to-peer. A room can grow past the mesh limit with full video.
+</p>
+<p>
+    The type definitions already reserve markers for the forwarding roles. The
+    <a href="https://github.com/lightningrodlabs/presence/blob/main-0.6/packages/webrtc-peer/ROADMAP.md">roadmap</a>
+    lists the three pieces that the work needs: media direction per connection, track forwarding
+    across connections, and a topology with loop prevention. None of it is working code yet, and
+    the roadmap says which pieces belong in the library and which belong to the app.
+</p>
+
+<h2>The even nerdier bits</h2>
+<p>
+    There are some lessons from this work worth reporting here, so even if no human reads them, an
+    LLM might benefit. A note on process first. We added tooling to Presence so that one participant
+    in a room can request the connection logs from every other participant. We drove all development
+    off those aggregate logs, so we were solving the real-world peer-to-peer issues, not the ones a
+    mock produces. Two of the lessons are specific to peer-to-peer, because there is no server to
+    referee.
+</p>
+<p>
+    Both sides need a shared idea of which attempt is current. A signaling server can order messages
+    and tell both sides which session is live. Over best-effort peer-to-peer delivery, nobody does
+    that for you. In June, we chased a reconnect deadlock of about twenty seconds. Each side's
+    connection minted its own random id. After a teardown, a fresh state machine on one side sometimes
+    latched onto the dead session's id and rejected the live peer's answers as stale.
+</p>
+<p>
+    The fix was an epoch, a counter for the current attempt, on every signal. The orchestrator
+    allocates the epoch, it survives recreation, and it is authoritative for ordering. In August, the
+    same theme came back at a finer grain. We scoped the epoch to the remote side's connection id,
+    with tombstones, records of dead sessions, so a resurrected dead session cannot sneak back in.
+</p>
+<p>
+    Back off, and stop shouting. With no server in front of the NAT, nothing throttles you but
+    yourself. In the August field session that produced 0.5.0, a dead relay drove eleven back-to-back
+    retry sessions in under two and a half minutes. Each one re-flooded some thirty-five ICE
+    candidates at the peer. The retry gap is now exponential, from a few hundred milliseconds out to
+    seven seconds, and the library filters and deduplicates outbound candidates.
+</p>
+<p>
+    The same session showed that giving up from the disconnected state was an illegal transition in
+    our own table. So the machine logged it as blocked and sat there dead instead of failing cleanly.
+    The lifecycle guard did its job and told us. We had just never read that particular line before.
+</p>
+<p>
+    The other lessons are general WebRTC. Connected must mean that media is flowing. The data
+    channel can be stuck while audio and video flow perfectly. So since 0.3.0 the phase means
+    media-ready, and data-channel readiness is its own flag. Emit state changes, not log entries. An
+    app that re-runs its on-connect work on every "connected to connected" log entry will renegotiate
+    a call that was fine.
+</p>
+<p>
+    And one lesson is about us, not WebRTC. After 0.5.0, we found that Presence shipped two releases
+    that still bundled 0.4.0. npm pulled the older version from the registry instead of linking the
+    workspace copy. There is now a test that fails if the app resolves the library anywhere but the
+    workspace package. Fixes that do not ship are not fixes.
+</p>
+
+        </div>
+    </div>
+
+    <footer class="post-footer">
+        <div class="post-footer-container">
+            <a href="/blog/" class="back-to-blog">← Back to all posts</a>
+        </div>
+    </footer>
+</article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="blog-footer">
+        <div class="blog-footer-container">
+            <p>
+                <span class="footer-muted">Brought to you by </span>
+                <a href="https://lightningrodlabs.org/">Lightningrod Labs</a>
+                <span class="footer-muted"> and </span>
+                <a href="https://holochain.org">Holochain</a>
+                <span class="footer-muted"> · © 2026 Harris-Braun Enterprises, LLC</span>
+            </p>
+        </div>
+    </footer>
+    <script src="/nav-menu.js?v=1791587429"></script>
+</body>
+</html>

@@ -18,9 +18,16 @@ permalink: /
             {% for post in site.posts %}
             <article class="blog-post-card">
                 <a href="{{ post.url | relative_url }}" class="post-card-link">
-                    {% if post.image %}
-                    <div class="post-card-image">
-                        <img src="{{ post.image }}" alt="{{ post.title }}">
+                    {% assign card_image = post.card_image | default: post.image %}
+                    {% if card_image %}
+                    <div class="post-card-image{% if post.card_image_fit == 'contain' %} post-card-image-contain{% endif %}">
+                        <img src="{{ card_image }}" alt="{{ post.title }}">
+                    </div>
+                    {% elsif post.card_icons %}
+                    <div class="post-card-image-placeholder post-card-icons">
+                        {% for icon in post.card_icons %}
+                        <img src="{{ icon }}" alt="">
+                        {% endfor %}
                     </div>
                     {% else %}
                     <div class="post-card-image-placeholder"></div>
@@ -29,7 +36,7 @@ permalink: /
                     <div class="post-card-content">
                         {% if post.tags %}
                         <div class="post-card-tags">
-                            {% for tag in post.tags limit:2 %}
+                            {% for tag in post.tags limit:4 %}
                             <span class="post-card-tag">{{ tag }}</span>
                             {% endfor %}
                         </div>
@@ -37,9 +44,7 @@ permalink: /
 
                         <h2 class="post-card-title">{{ post.title }}</h2>
 
-                        {% if post.excerpt %}
-                        <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-                        {% endif %}
+                        <p class="post-card-excerpt">{{ post.content | strip_html | normalize_whitespace | truncatewords: 90 }}</p>
 
                         <div class="post-card-meta">
                             {% if post.author_image %}
