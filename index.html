@@ -18,7 +18,8 @@ permalink: /
             {% for post in site.posts %}
             <article class="blog-post-card">
                 <a href="{{ post.url | relative_url }}" class="post-card-link">
-                    {% assign card_image = post.card_image | default: post.image %}
+                    {% assign card_image = post.card_image %}
+                    {% unless post.card_icons %}{% assign card_image = post.card_image | default: post.image %}{% endunless %}
                     {% if card_image %}
                     <div class="post-card-image{% if post.card_image_fit == 'contain' %} post-card-image-contain{% endif %}">
                         <img src="{{ card_image }}" alt="{{ post.title }}">

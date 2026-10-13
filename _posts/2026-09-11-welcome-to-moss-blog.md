@@ -4,7 +4,8 @@ title: "Welcome to the Moss Blog"
 date: 2026-09-11
 author: Eric Harris-Braun
 author_image: /blog/assets/images/authors/eric.jpg
-image: /images/screenshots/Moss-home.png
+image: https://moss.social/images/screenshots/Moss-home.png
+card_image: /images/screenshots/Moss-home.png
 tags: [announcement, moss]
 excerpt: "We're excited to launch the Moss blog - a space to share updates, insights, and stories about building peer-to-peer collaboration tools."
 ---

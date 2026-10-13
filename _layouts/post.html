@@ -33,7 +33,8 @@ layout: default
                 </div>
             </div>
 
-            {% assign hero_image = page.image | default: page.card_image %}
+            {% assign hero_image = page.card_image %}
+            {% unless page.card_icons %}{% assign hero_image = page.card_image | default: page.image %}{% endunless %}
             {% if hero_image %}
             <div class="post-hero-image{% if page.card_image_fit == 'contain' %} post-hero-image-contain{% endif %}">
                 <img src="{{ hero_image }}" alt="{{ page.title }}">
