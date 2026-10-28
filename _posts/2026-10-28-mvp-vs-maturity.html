@@ -1,125 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MVP vs Maturity - Moss blog</title>
+---
+layout: post
+title: "MVP vs Maturity"
+date: 2026-10-28
+author: Eric Harris-Braun
+author_image: /blog/assets/images/authors/eric.jpg
+card_image: /blog/assets/images/posts/mvp-vs-maturity/hero.png
+image: https://moss.social/blog/assets/images/posts/mvp-vs-maturity/og.png
+tags: [design, notebooks, presence, moss]
+excerpt: "As simple as possible but no simpler. But what counts as \"no simpler\"? Three recent additions, comments in Notebooks, annotations in Presence, and crash recovery in Moss, that turned out to be part of viability."
+---
 
-    <!-- Moss global styles -->
-    <link rel="stylesheet" href="/globals.css"/>
-    <link rel="stylesheet" href="/styleguide.css"/>
-    <link rel="stylesheet" href="/style.css?v=1793215191"/>
-
-    <!-- Blog-specific styles -->
-    <link rel="stylesheet" href="/blog/assets/css/blog.css?v=1793215191"/>
-
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-    <!-- Begin Jekyll SEO tag v2.9.1 -->
-<title>MVP vs Maturity | Moss blog</title>
-<meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="MVP vs Maturity" />
-<meta name="author" content="Eric Harris-Braun" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="As simple as possible but no simpler. But what counts as “no simpler”? Three recent additions, comments in Notebooks, annotations in Presence, and crash recovery in Moss, that turned out to be part of viability." />
-<meta name="twitter:description" property="og:description" content="As simple as possible but no simpler. But what counts as “no simpler”? Three recent additions, comments in Notebooks, annotations in Presence, and crash recovery in Moss, that turned out to be part of viability." />
-<link rel="canonical" href="https://moss.social/blog/2026/10/27/mvp-vs-maturity/" />
-<meta property="og:url" content="https://moss.social/blog/2026/10/27/mvp-vs-maturity/" />
-<meta property="og:site_name" content="Moss blog" />
-<meta property="og:image" content="https://moss.social/blog/assets/images/posts/mvp-vs-maturity/og.png" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-10-27T00:00:00-04:00" />
-<meta property="article:modified_time" content="2026-10-27T00:00:00-04:00" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://moss.social/blog/assets/images/posts/mvp-vs-maturity/og.png" />
-<meta name="twitter:title" content="MVP vs Maturity" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Eric Harris-Braun"},"dateModified":"2026-10-27T00:00:00-04:00","datePublished":"2026-10-27T00:00:00-04:00","description":"As simple as possible but no simpler. But what counts as “no simpler”? Three recent additions, comments in Notebooks, annotations in Presence, and crash recovery in Moss, that turned out to be part of viability.","headline":"MVP vs Maturity","image":"https://moss.social/blog/assets/images/posts/mvp-vs-maturity/og.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://moss.social/blog/2026/10/27/mvp-vs-maturity/"},"url":"https://moss.social/blog/2026/10/27/mvp-vs-maturity/"}</script>
-<!-- End Jekyll SEO tag -->
-
-    <link type="application/atom+xml" rel="alternate" href="https://moss.social/blog/feed.xml" title="Moss blog" />
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="site-navigation">
-        <div class="nav-container">
-            <div class="nav-left">
-                <a href="/" class="nav-logo">
-                    <img src="/images/moss-logo.svg" alt="Moss" class="nav-logo-desktop"/>
-                    <img src="/images/icons/Moss-mark-square.svg" alt="Moss" class="nav-logo-mobile"/>
-                </a>
-                <div class="nav-links">
-                    <a href="/tools.html" class="nav-link">Tools</a>
-                    <a href="/blog/" class="nav-link">Blog</a>
-                    <a href="https://docs.moss.social" class="nav-link">Docs ↗</a>
-                    <a href="https://dev.theweave.social/" class="nav-link">Dev docs ↗</a>
-                </div>
-            </div>
-            <div class="nav-actions">
-                <!-- Mobile-only menu button -->
-                <button class="nav-mobile-menu" aria-label="Menu" aria-expanded="false">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="6" r="1.5" fill="currentColor"/>
-                        <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
-                        <circle cx="12" cy="18" r="1.5" fill="currentColor"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="blog-main">
-        <article class="blog-post">
-    <div class="post-hero">
-        <div class="post-hero-container">
-            <div class="post-hero-content">
-                <a href="/blog/" class="back-to-blog">← All posts</a>
-
-                
-                <div class="post-header-tags">
-                    
-                    <span class="post-header-tag">design</span>
-                    
-                    <span class="post-header-tag">notebooks</span>
-                    
-                    <span class="post-header-tag">presence</span>
-                    
-                    <span class="post-header-tag">moss</span>
-                    
-                </div>
-                
-
-                <h1 class="post-hero-title">MVP vs Maturity</h1>
-
-                <div class="post-hero-meta">
-                    
-                    <img src="/blog/assets/images/authors/eric.jpg" alt="Eric Harris-Braun" class="post-author-avatar">
-                    
-                    <div class="post-meta-text">
-                        <span class="post-author-name">Eric Harris-Braun</span>
-                        <time datetime="2026-10-27T00:00:00-04:00" class="post-date">
-                            27 Oct 2026
-                        </time>
-                    </div>
-                </div>
-            </div>
-
-            
-            
-            
-            <div class="post-hero-image">
-                <img src="/blog/assets/images/posts/mvp-vs-maturity/hero.png" alt="MVP vs Maturity">
-            </div>
-            
-        </div>
-    </div>
-
-    <div class="post-content">
-        <div class="post-content-container">
-            <p>
+<p>
     One of my favorite watch-phrases is: <strong>"as simple as possible but no simpler"</strong>. Its
     more common cousin is the term "Minimum Viable Product," the MVP. These notions are actually hard. What really is
     "no simpler," and when is something actually "viable"? In today's world it seems like a certain
@@ -313,31 +204,3 @@
         mistaken for one of ours.
     </li>
 </ul>
-
-        </div>
-    </div>
-
-    <footer class="post-footer">
-        <div class="post-footer-container">
-            <a href="/blog/" class="back-to-blog">← Back to all posts</a>
-        </div>
-    </footer>
-</article>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="blog-footer">
-        <div class="blog-footer-container">
-            <p>
-                <span class="footer-muted">Brought to you by </span>
-                <a href="https://lightningrodlabs.org/">Lightningrod Labs</a>
-                <span class="footer-muted"> and </span>
-                <a href="https://holochain.org">Holochain</a>
-                <span class="footer-muted"> · © 2026 Harris-Braun Enterprises, LLC</span>
-            </p>
-        </div>
-    </footer>
-    <script src="/nav-menu.js?v=1793215191"></script>
-</body>
-</html>
